@@ -10,12 +10,12 @@ I completed my bachelor and masters degrees, both in Information Science and Tec
 
 When not researching, teaching, or learning, I enjoy listening to music and attending shows, and I train and compete as a high jumper.
 
-## Recently I've Been...
+## Recently I've Been..
 
 ..
 
 ## Some Important Links
 
-Curriculum Vitae
-LinkedIn
-GitHub
+- Curriculum Vitae
+- LinkedIn
+- GitHub
