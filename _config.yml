@@ -3,7 +3,7 @@
 # # # # # # # # # # # # #
 
 # Basic
-name:               "Kiko Plus"
+name:               "Anthony T. Pinter"
 
 author:
   facebook:         your-id
@@ -24,7 +24,7 @@ author:
 
 copyright:
   year:             2017
-  name:             Kiko
+  name:             Anthony T. Pinter
 
 # Google-analytics
 google-analytics:
@@ -35,7 +35,7 @@ disqus:
   id:               "kiko-plus"
 
 # URL
-url:                "https://AWEEKJ.github.io" # the base hostname & protocol for your site
+url:                "https://atp136.github.io" # the base hostname & protocol for your site
 # url:                "http://localhost:4000" # use this url when you develop
 baseurl:            "/Kiko-plus" # the subpath of your site, e.g. /blog
 
@@ -55,13 +55,15 @@ kramdown:
 
 # Navigation
 nav:
-  - name:           "About"
+  - name:           "Posts"
     url:            "/about"
-  - name:           "Archive"
+  - name:           "Publications"
     url:            "/archive"
-  - name:           "Tags"
+  - name:           "Research"
     url:            "/tags"
-  - name:           "Github"
+  - name:           "Teaching"
+    url:            "https://github.com/AWEEKJ/Kiko-plus"
+  - name:           "Service"
     url:            "https://github.com/AWEEKJ/Kiko-plus"
 
 # Sass
@@ -85,7 +87,7 @@ defaults:
       layout:       "post"
 
 # jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
-gems:
+plugins_dir:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-admin
