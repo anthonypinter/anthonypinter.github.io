@@ -14,7 +14,7 @@ When not researching, teaching, or learning, I enjoy listening to music and atte
 
 ..
 
-## Some Important Things
+## Some Useful Things
 
 - Curriculum Vitae
 - LinkedIn
