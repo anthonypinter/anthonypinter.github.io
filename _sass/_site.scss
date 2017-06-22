@@ -18,7 +18,7 @@ body {
 
 .content-container {
   max-width: 48rem;
-  padding: 5rem 1rem;
+  padding: 2rem 1rem;
   margin-left:  auto;
   margin-right: auto;
 
@@ -32,14 +32,13 @@ body {
   Header
   -------------- */
 .header {
-  padding: 2%;
-  margin-bottom: 1.5em;
+  padding: 1%;
 
   &-title {
-    margin: 0.3em 0;
+    margin: 0.1em 0;
     font-size: 2.25em;
     line-height: 1.2em;
-    font-weight: 600;
+    font-weight: 500;
 
     a {
       color: $base-color;
@@ -66,7 +65,7 @@ body {
 
       &:hover,
       &:focus {
-        color: $oc-gray-7;
+        color: $base-lighten-color;
         text-decoration: none;
       }
     }
@@ -180,7 +179,7 @@ body {
 .list {
   &-post {
     padding: 4% 2%;
-    
+
     &:hover {
       background-color: $background-over-color;
       border-color: transparent;

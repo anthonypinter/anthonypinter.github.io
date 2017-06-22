@@ -1,7 +1,9 @@
 ---
-title: About
-permalink: /about/
+title: Posts
+layout: page
+permalink: /posts/
 ---
+# About
 
 You can see live demo [here](https://aweekj.github.io/Kiko-plus). This theme is inspired by [Kiko](http://github.com/gfjaru/Kiko) theme.
 
