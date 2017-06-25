@@ -17,6 +17,6 @@ Filler here (probably a shorter post TOC)
 
 ## Some Useful Things
 
-- [Curriculum Vitae]({{url}}/documents/PinterAnthonyCV)
+- [Curriculum Vitae]({{url}}/documents/PinterAnthonyCV.pdf)
 - [LinkedIn](https://www.linkedin.com/in/anthonypinter/)
 - [GitHub](https://github.com/atp136)
