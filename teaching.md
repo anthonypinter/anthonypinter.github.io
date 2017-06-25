@@ -4,7 +4,7 @@ layout: page
 permalink: /teaching/
 ---
 
-I have experience in both residential and distributed classroom settings. My current teaching philosophy statement can be found [here]({{url}}/documents/pinteranthonyteachingphilosophy.pdf).
+I have experience in both residential and distributed classroom settings. My current teaching philosophy statement can be found [here]({{url}}/documents/PinterAnthonyTeachingPhilosophy.pdf).
 
 ## Currently Teaching
 
