@@ -1,7 +1,5 @@
 ---
 title: Posts
-layout: page
+layout: postmain
 permalink: /posts/
 ---
-
-# Posts

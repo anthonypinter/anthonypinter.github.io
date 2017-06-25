@@ -32,10 +32,10 @@ body {
   Header
   -------------- */
 .header {
-  padding: 1%;
+  padding: 0%;
 
   &-title {
-    margin: 0.1em 0;
+    margin: 0 0;
     font-size: 2.25em;
     line-height: 1.2em;
     font-weight: 500;
@@ -96,10 +96,10 @@ body {
 .page {
   &-title {
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 2.25em;
     line-height: 1.2em;
-    font-weight: 600;
+    font-weight: 500;
   }
 }
 

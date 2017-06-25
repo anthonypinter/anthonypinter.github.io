@@ -43,8 +43,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   padding-top: 0.0em;
-  padding-bottom: 0.3em;
-  font-size: 2.15em;
+  padding-bottom: 0em;
+  font-size: 2.0em;
   line-height: 1.2em;
 }
 
@@ -142,7 +142,7 @@ ol {
 ol,
 ul {
   > li {
-    margin: 0 auto $li-bottom-space $li-bullets-width;
+    margin: 0 auto 0;
     line-height: $li-line-height;
 
     > ol,
@@ -193,7 +193,7 @@ dd {
 hr {
   border: 0;
   border-top: 1px solid $divider-color;
-  margin: 1.5rem auto;
+  margin: 0.25rem auto;
 }
 
 strong {
