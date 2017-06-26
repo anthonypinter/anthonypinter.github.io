@@ -4,7 +4,7 @@ title: Hello!
 
 ---
 
-<img src='{{ site.url }}assets/img/anthony.png' padding='10px' width='250' align='right' alt='anthony'/>
+<img src='{{ site.url }}assets/images/anthony.png' padding='10px' width='250' align='right' alt='anthony'/>
 
 I am a PhD student at University Colorado Boulder, studying [Information Science](http://www.colorado.edu/cmci/academics/information-science) in the [College of Media, Communication and Information](http://www.colorado.edu/cmci/). I work with [Jed Brubaker](http://www.jedbrubaker.com) on topics relating to identity in online spaces.
 
