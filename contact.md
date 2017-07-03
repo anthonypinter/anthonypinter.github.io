@@ -3,4 +3,6 @@ layout: contact
 title: Contact
 ---
 
-I can be reached at: anthony.pinter@colorado.edu
+The easiest way to reach me is via [e-mail.](mailto:anthony.pinter@colorado.edu)
+
+### Calendar
