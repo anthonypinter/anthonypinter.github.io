@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Hello!
-
 ---
 
 <img src='{{ site.url }}/assets/images/anthony.png' padding='10px' width='250' align='right' alt='anthony'/>
