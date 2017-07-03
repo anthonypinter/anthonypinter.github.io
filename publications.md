@@ -16,4 +16,4 @@ Buck, H. G., **Pinter, A. T.**, Poole, E. S., Chan, J., Balaban, E., Foy, A., Bl
 
 ### Conference Papers
 
-Lloyd, T., Buck, H., Foy, A., Black, S., **Pinter, A. T.**, Pogash, R., ... & Smyth, J. (2017). The Penn State Heart Assistant: A pilot study of a web-based intervention to improve self-care of heart failure patients. Health Informatics Journal, 1460458217704247.
+**Pinter, A. T.**, Wisniewski, P. J., Xu, H., Rosson, M. B., & Caroll, J. M. (2017, June). [Adolescent Online Safety: Moving Beyond Formative Evaluations to Designing Solutions for the Future.](/IDC2017-PinterWisniewski.pdf) In Proceedings of the 2017 Conference on Interaction Design and Children (pp. 352-357). ACM.
