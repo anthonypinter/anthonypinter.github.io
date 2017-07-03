@@ -17,3 +17,9 @@ Buck, H. G., **Pinter, A. T.**, Poole, E. S., Chan, J., Balaban, E., Foy, A., Bl
 ### Conference Papers
 
 **Pinter, A. T.**, Wisniewski, P. J., Xu, H., Rosson, M. B., & Caroll, J. M. (2017, June). [Adolescent Online Safety: Moving Beyond Formative Evaluations to Designing Solutions for the Future.](/IDC2017-PinterWisniewski.pdf) In Proceedings of the 2017 Conference on Interaction Design and Children (pp. 352-357). ACM.
+
+### Other Publications of Note
+
+**Pinter, A. T.** & Goldman, B. (2017, April). [Measuring sentiment during the 2016 U.S. Presidential Election using emoji analysis.](/CERS-PinterGoldman.pdf) Presented at the College of Engineering Research Symposium (CERS), University Park, PA.
+
+**Pinter, A. T.** (2016, November). [“I Thought You Were a Girl:” How Images and GIFs can Influence Perception of Gender Online.](/RutgersMS-Pinter.pdf) Presented at the Third Rutgers iSchool Invitational, New Brunswick, NJ.
