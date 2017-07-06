@@ -56,7 +56,7 @@ body {
 
   &-nav {
     a {
-      color: $oc-gray-7;
+      color: $oc-gray-6;
       text-transform: lowercase;
       -webkit-transition: all .2s ease;
          -moz-transition: all .2s ease;
@@ -65,7 +65,7 @@ body {
 
       &:hover,
       &:focus {
-        color: $base-lighten-color;
+        color: $oc-black;
         text-decoration: none;
       }
     }
