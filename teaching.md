@@ -11,6 +11,7 @@ I have experience in both residential and distributed classroom settings. My cur
 | Position| Course |  Institution | Term |
 |---------------|-----------|----------|-----|
 | Instructor | Information and Organizations | Penn State WC | FA 2017 |
+| Teaching Assistant | Computing and Society | CU Boulder | FA 2017 |
 
 ## Previously Taught
 
