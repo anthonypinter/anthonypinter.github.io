@@ -10,9 +10,9 @@ permalink: /publications/
 
 **Pinter, A. T.**, Goldman, B., & Novotny, E. C. (2017). Pennsylvania Perspectives of the 2016 Election: A Project to Collect Web and Social Media Content Around Significant Societal Events. Accepted for publication in Pennsylvania Libraries: Research & Practice.
 
-Lloyd, T., Buck, H., Foy, A., Black, S., **Pinter, A. T.**, Pogash, R., ... & Smyth, J. (2017). The Penn State Heart Assistant: A pilot study of a web-based intervention to improve self-care of heart failure patients. Health Informatics Journal, 1460458217704247.
+Buck, H. G., **Pinter, A. T.**, Poole, E. S., Chan, J., Balaban, E., Foy, A., Black, S., Boehmer, J., Pogash, R., & Lloyd, T. (2017). [Qualitative description of the technology end-user experience from The Penn State Heart Assistant web-based intervention.]({{url}}/documents/BuckPinterEt2017.pdf) *Geriatric Nursing*.
 
-Buck, H. G., **Pinter, A. T.**, Poole, E. S., Chan, J., Balaban, E., Foy, A., Black, S., Boehmer, J., Pogash, R., & Lloyd, T. (2017). Qualitative description of the technology end-user experience from The Penn State Heart Assistant web-based intervention. Manuscript accepted for publication in Geriatric Nursing.
+Lloyd, T., Buck, H., Foy, A., Black, S., **Pinter, A. T.**, Pogash, R., ... & Smyth, J. (2017). [The Penn State Heart Assistant: A pilot study of a web-based intervention to improve self-care of heart failure patients.]({{url}}/documents/LloydBuckEt2017.pdf) *Health Informatics Journal*, 1460458217704247.
 
 ### Conference Papers
 
