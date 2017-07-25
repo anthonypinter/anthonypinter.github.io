@@ -6,9 +6,9 @@ permalink: /publications/
 
 ### Journal Papers
 
-**Pinter, A. T.** & Goldman, B. (2017). A Digital Time Machine; Revisiting the 42nd Canadian Federal Election to Evaluate the Efficacy of Retroactive Tweet Collection. Accepted for publication in Code4Lib.
-
 **Pinter, A. T.**, Goldman, B., & Novotny, E. C. (2017). Pennsylvania Perspectives of the 2016 Election: A Project to Collect Web and Social Media Content Around Significant Societal Events. Accepted for publication in Pennsylvania Libraries: Research & Practice.
+
+**Pinter, A. T.**, & Goldman, B. (2017). [Recount: Revisiting the 42nd Canadian Federal Election to Evaluate the Efficacy of Retroactive Tweet Collection.](http://journal.code4lib.org/articles/12676) *Code4Lib, 37.*
 
 Buck, H. G., **Pinter, A. T.**, Poole, E. S., Chan, J., Balaban, E., Foy, A., Black, S., Boehmer, J., Pogash, R., & Lloyd, T. (2017). [Qualitative description of the technology end-user experience from The Penn State Heart Assistant web-based intervention.]({{url}}/documents/BuckPinterEt2017.pdf) *Geriatric Nursing*.
 
