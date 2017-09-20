@@ -13,8 +13,8 @@ When not a student, I enjoy finding new music, training for and competing in tra
 
 ## Recently I've Been..
 
-- Updated my CV and this website
-- Working on a project investigating bias in music reviews
+1. Updated my CV and this website
+2. Working on a project investigating bias in music reviews
 
 ## Some Useful Things
 
