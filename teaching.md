@@ -26,7 +26,7 @@ I have experience in both residential and distributed classroom settings. My cur
 | UG Learning Assistant | Information and Organizations | Penn State | SP 2015 |
 | UG Learning Assistant | Information and Organizations | Penn State | FA 2014 |
 
-### Distributed Teaching
+### Online Teaching
 
 | Position| Course |  Institution | Term |
 |---------------|-----------|----------|-----|
