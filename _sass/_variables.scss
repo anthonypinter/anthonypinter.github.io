@@ -13,11 +13,12 @@
 @font-face {
   font-family: Concourse_T3_Bold;
   src: url("../fonts/concourse_t3_bold-webfont.woff") format('woff');
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal
 }
 
 $base-font: 'Concourse_T3', 'Spoqa Han Sans', 'Source Sans Pro', Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, Verdana, Arial, Dotum, sans-serif;
+$base-h1-font: 'Concourse_T3_Bold'
 $code-font: Menlo, 'Ubuntu Mono', Monaco, 'Spoqa Han Sans', monospace;
 $code-gist-font: Menlo, 'Ubuntu Mono', Monaco, 'Spoqa Han Sans', monospace;
 
