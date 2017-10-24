@@ -1,0 +1,73 @@
+# # # # # # # # # # # # #
+#   K i k o - p l u s   #
+# # # # # # # # # # # # #
+
+# Basic
+name:               "Anthony T. Pinter"
+
+copyright:
+  year:             2017
+  name:             Anthony T. Pinter
+
+# Google-analytics
+google-analytics:
+  id:               ""
+
+# Disqus
+disqus:
+  id:               ""
+
+# URL
+url:                "https://atp136.github.io/" # the base hostname & protocol for your site
+#url:                "http://localhost:4000" # use this url when you develop
+baseurl:            "" # the subpath of your site, e.g. /blog
+
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:           America/New_York
+permalink:          /:year-:month-:day/:title/
+
+# Markdown
+markdown:           kramdown
+kramdown:
+  input:            GFM
+
+# Navigation
+nav:
+  - name:           "Posts"
+    url:            "/posts"
+  - name:           "Publications"
+    url:            "/publications"
+  - name:           "Research"
+    url:            "/research"
+  - name:           "Teaching"
+    url:            "/teaching"
+  - name:           "Service"
+    url:            "/service"
+
+# Sass
+sass:
+  sass_dir:         _sass
+  style:            :compressed
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+
+# jekyll-seo-tag, see: http://www.rubydoc.info/gems/jekyll-seo-tag/1.2.0
+plugins_dir:
+  - jekyll-seo-tag
+  - jekyll-admin
+
+exclude:            [vendor]
