@@ -22,7 +22,7 @@ html, body {
   padding-left: 100px;
   padding-right: 100px;
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 }
 
 .blurb {
@@ -38,4 +38,5 @@ a {
   font-family: GT-Walsheim-Medium;
   color: #3d3936;
   text-decoration: none;
+  line-height: 28pt;
 }
