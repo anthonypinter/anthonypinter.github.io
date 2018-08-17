@@ -23,6 +23,10 @@ html, body {
   padding-right: 100px;
   padding-top: 50px;
   padding-bottom: 150px;
+  font-size: 72px;
+  background: -webkit-linear-gradient(red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .blurb {
@@ -39,4 +43,10 @@ a {
   color: #3d3936;
   text-decoration: none;
   line-height: 28pt;
+}
+
+a:hover {
+  background: -webkit-linear-gradient(red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
