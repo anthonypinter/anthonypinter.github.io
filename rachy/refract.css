@@ -24,7 +24,7 @@ html, body {
   padding-top: 50px;
   padding-bottom: 150px;
   font-size: 72px;
-  background: -webkit-linear-gradient(red, blue);
+  background: -webkit-linear-gradient(rgb(249, 230, 213), rgb(175, 204, 229));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
