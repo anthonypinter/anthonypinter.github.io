@@ -10,8 +10,12 @@
 			display: grid;
 		}
 
-		div { /* thing to center */
+		.thing-to-center { /* thing to center */
 			margin: auto;
+		}
+
+		.inline-block-child {
+  		display: inline-block;
 		}
 
 		span {
@@ -33,21 +37,16 @@
 </head>
 
 <body>
-<div>
-<span>
-<img src="/headshot.jpg" alt="me" width="300px" height="400px">
-</span>
-<span>
 
-<h3>Hi. I'm Anthony.</h3>
+	<div class='thing-to-center'>
+	  <div class='child inline-block-child'><img src="/headshot.jpg" alt="me"></div>
+	  <div class='child inline-block-child'>
+			<h3>Hi. I'm Anthony.</h3>
+			<p>I'm a <a href="https://www.colorado.edu/cmci/people/graduate-students/information-science/anthony-pinter">PhD Candidate</a> in Information Science at the University of Colorado Boulder.
+			<p>I work with <a href="https://www.jedbrubaker.com">Jed Brubaker</a> and <a href="https://cmci.colorado.edu/idlab/">the Identity Lab</a>, where I study break-ups and social media.
+			<p>For more information, including contact email and publications, check <a href="/pintercv.pdf">my CV</a>.
+		</div>
+	</div>
 
-<p>I'm a <a href="https://www.colorado.edu/cmci/people/graduate-students/information-science/anthony-pinter">PhD Candidate</a> in Information Science at the University of Colorado Boulder.
-
-<p>I work with <a href="https://www.jedbrubaker.com">Jed Brubaker</a> and <a href="https://cmci.colorado.edu/idlab/">the Identity Lab</a>, where I study break-ups and social media.
-
-<p>For more information, including contact email and publications, check <a href="/pintercv.pdf">my CV</a>.
-
-</span>
-</div>
 </body>
 </html>
