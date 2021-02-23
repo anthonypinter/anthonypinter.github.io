@@ -1,0 +1,115 @@
+---
+layout: default
+section_id: home
+---
+
+  <div class="left">
+    <div id="headshot">
+      <img src="./assets/headshot.jpg">
+    </div>
+    <h1>Anthony Pinter</h1>
+    <ul id="navi">
+      <li id="navi-home">
+        <a>home</a>
+      </li>
+      <li id="navi-about">
+        <a>about</a>
+      </li>
+      <li id="navi-publications">
+        <a>publications</a>
+      </li>
+
+    </ul>
+    <div id="external-links">
+      <a id="btn-stech" href="https://cmci.colorado.edu/idlab/">
+        <p>identity lab</p>
+      </a>
+      <a href="https://twitter.com/anthonypinter">
+        <span class="external-link fa fa-twitter"></span>
+      </a>
+      <a href="mailto:anthony.pinter@colorado.edu">
+        <span class="external-link fa fa-envelope-o"></span>
+      </a>
+    </div>
+  </div>
+  <div id="home" class="card">
+    <h2>hi.</h2>
+    <div id="shortBio">
+      <p>I am a PhD Candidate in Information Sceince at the University of Colorado BoulderI work with Jed Brubaker and the Identity Lab. My research focuses on understanding the experiences have during life transitions and how those experiences are represented in sociotechnical systems. I am particularly interested in how people navigate the digital connections that are left in the wake of a romantic break-up.</p>
+      <p>I concurrently hold a position as Adjunct Faculty in the College of Information Sciences and Technology, where I teach through the Penn State World Campus program.I am also the Curriculum Coordinator for the iSchool Inclusion Institute.</p>
+      <p>For more detailed information about my professional activities, see <a href="/assets/pintercv.pdf">my Vita</a>. For more about me, have a look at the <a href="/#about">About page</a>.</p>
+    </div>
+    <div class="line"></div>
+    <div id="news">
+      <div id="news-title">
+        <h2>most recently.</h2>
+      </div>
+      <ul>
+        {% for item in site.data.news limit: 2 %}
+        <li>
+          <span class="news-date">{{item.date | date: "%d %B %Y"}}</span>
+          <span class="separator">|</span>
+          <span><p>{{item.headline}}</p></span>
+        </li>
+        {% endfor %}
+      </ul>
+      <div id="news-more">
+        <a href="./">archive.</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="card">
+    <h2>more about me.</h2>
+    <div id="fullBio">
+      <p>I come from a family of educators, and was afforded the opportunity to see different parts of the country while <a href="https://altoona.psu.edu/person/brad-pinter-phd">my father</a> completed his PhD, post-doc, and got his first academic position. Because of my background, I knew early on I wanted to pursue a career in research and teaching. After a brief failed stint as an engineering student, I completed my B.S. and M.S. in Information Sciences and Technology at the Pennsylvania State University in 2015 and 2017, respectively. While at Penn State, I competed in track and field, specializing in the multi-event disciplines.</p>
+      <p>Since moving to Colorado, I've leaned into the lifestyle you would expect a Coloradan have. I spend most of my free time riding or thinking about bikes and skis (depending on the season). I ride all disciplines on bikes year round, but train specifically for long XC-style races like the Leadville 100. During the winter, I've confined myself to on-piste or sidecountry skiing, but I expect that to change within the next year.</p>
+    </div>
+    <div class="line"></div>
+    <h2>about this site.</h2>
+    <div id="fullBio">
+      <p>For a long time, I had a static website inspired primarily by Layout by Naz Hamid at <a href="https://github.com/weightshift/The-Personal-Page">Weightshift</a>. However, as I entered the last year of my doctoral work, I felt it was time to do something a bit more substantial.</p>
+      <p>I've always been a bit of a minimalist when it comes to design. I was taken with <a href="http://mornaaman.com">Mor Naaman's personal website</a>, but wanted the Jekyll functionality I had come to enjoy from working on <a href="https://cmci.colorado.edu/idlab/">the Identity Lab's site</a>.</p>
+      <p>So I combined the two (with substantial design tweaks), and here we are. You can find the repo for this particular design on <a href="https://github.com/anthonypinter/anthonypinter.github.io">my Github</a>.</p>
+    </div>
+  </div>
+
+  <div id="publications" class="card">
+    <h2>recent publications.</h2>
+    <h3>2020</h3>
+    <ul>
+      <li>
+        <a id="p-icon" href="">
+          <span class="fa fa-file-pdf-o"></span>
+        </a>
+          <div id="p-info">
+            <p id="p-title">How Partisan Crowds Affect News Evaluation</p>
+            <span id="p-author">Maurice Jakesch, Moran Koren, Anna Evtushenko, Mor Naaman</span>
+            <span class="separator">|</span>
+            <a href="https://truthandtrustonline.com/">
+              <span id="p-source">Truth and Trust Online (TTO) 2020</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <h3>2019</h3>
+      <ul>
+        <li>
+          <a id="p-icon" href="https://people.jacobs.cornell.edu/mor/publications/thegoods/smadja_webconf_backtracking.pdf">
+            <span class="fa fa-file-pdf-o"></span>
+          </a>
+          <div id="p-info">
+            <p id="p-title">Understanding Reader Backtracking Behavior in Online News Articles</p>
+            <span id="p-author">Uzi Smadja, Max Grusky, Yoav Artzi, Mor Naaman</span>
+            <span class="separator">|</span><a href="https://www2019.thewebconf.org/">
+              <span id="p-source">WWW 2019</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <div id="news">
+        <div id="news-more">
+          <a href="https://scholar.google.com/citations?user=Vq_3XusAAAAJ&hl=en&oi=ao">more via google scholar.</a>
+        </div>
+      </div>
+    </div>
