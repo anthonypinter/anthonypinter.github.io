@@ -1,13 +1,19 @@
-## Mor Naaman - Homepage
-http://mornaaman.com
+## Personal Site
 
-### Installation: 
+Lovingly cloned from (Mor Naaman's site)[http://mornaaman.com]. The structure and coding was wonderful.
+
+This is under construction. It likely still looks a lot like Mor's. That will change over time.
+
+
+## From the original instructions
+
+### Installation:
 
 ##### Clone the project
 ```
 git clone git@github.com:\<GIT URL\>
 ```
-or 
+or
 ```
 git clone https://github.com/sTechLab/mornaaman.com.git
 ```
@@ -48,4 +54,3 @@ scp index.html USER@SERVER:coursewww/mor/htdocs
 scp main.js USER@SERVER:coursewww/mor/htdocs
 scp -r assets USER@SERVER:coursewww/mor/htdocs
 ```
-
