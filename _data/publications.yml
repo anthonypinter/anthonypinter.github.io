@@ -1,0 +1,39 @@
+# template
+# if a line doesn't apply, comment it out
+
+# - authors  : First M. Last, First M. Last ... & First M. Last
+#   title    : A title goes here: Only first words capitalized
+#   year     : 20##
+#   venue    : The name of the venue goes here
+#   pdf      : [PDF](https://www.google.com)
+#   tags     : journal, journal equivalent, poster, workshop paper, database
+
+########### --------------- ###########
+
+## 2021
+
+## 2020
+
+ - authors  : <b>Anthony T. Pinter</b>, Morgan Klaus Scheuerman, & Jed R. Brubaker
+   title    : Entering doors, evading traps&#58; Benefits and risks of visibility during transgender coming outs
+   year     : 2020
+   venue    : Proceedings of the ACM on Human Computer Interactions (CSCW 2020)
+   pdf      : <a href="./assets/papers/pinter-cscw2020.pdf">PDF</a>
+
+ - authors  : Kayla M. Booth, Joslenne Pena, Elizabeth V. Eikey, Aisling Quigley, <b>Anthony T. Pinter</b>, & Joe Sanchez
+   title    : Design, implementation, and reflections on teaching of computer programming modules to underrepresented students
+   year     : 2020
+   venue    : Annual Meeting of the Society for Information Technology & Teaching Education (SITE 2020)
+   pdf      :
+
+ - authors  : Kayla M. Booth, Elizabeth V. Eikey, Joe Sanchez, <b>Anthony T. Pinter</b>, & Aderin Falana
+   title    : The iSchool Inclusion Institute&#58; Addressing underrepresentation, building communities, and fostering collaboration
+   year     : 2020
+   venue    : Public Interest Technology Undergraduate Education (PIT-UN 2020)
+   pdf      :
+
+ - authors  : <b>Anthony T. Pinter</b>, Jacob M. Paul, Jessie Smith, & Jed R. Brubaker
+   title    : P4KxSpotify&#58; A dataset of Pitchfork music reviews and Spotify musical features
+   year     : 2020
+   venue    : Proceedings of the International AAAI Conference on Web and Social Media (ICWSM 2020)
+   pdf      : <a href="./assets/papers/pinter-icwsm2020.pdf">PDF</a>
