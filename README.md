@@ -39,7 +39,7 @@ The following files are important. They'll be the ones you want to change to mak
 * `404.html` is a bit weird -- it has a standalone version of `head.html` in it (again, too lazy to figure out why that is). Anything you do to `head.html`, you'll want to do here as well. It also has a standalone version of the left side bar (the one with the picture). So adjust that if you adjust it in `index.html`.
 * `index.html` is where the magic happens. All three of my "pages" are housed in this file. The first `div class="card"` is the home page, the second is the "about me", and the third is the publications. Adjust with your own content.
 
-### A note about my CSS choices
+## A note about my CSS choices
 
 In the switchover from Gulp based compiler to Jekyll, I was lazy. The css and scss files located in `/css` don't do anything. Ignore them.
 
