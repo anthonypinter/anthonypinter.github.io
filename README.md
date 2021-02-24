@@ -16,9 +16,13 @@ Here's how to do it:
 
 Wherever you set up that clone, navigate to it and run the following to set up Jekyll and run it on your virtual machine at `http://localhost:4000`.
 
-    bundle install
+````
+bundle install
+````
 
-    bundle exec jekyll serve
+````
+bundle exec jekyll serve
+````
 
 ### Adjust the CSS
 
