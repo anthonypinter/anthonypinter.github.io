@@ -1,5 +1,4 @@
 ---
-permalink: /404.html
 layout: default
 ---
 <html>
@@ -44,11 +43,22 @@ layout: default
   </ul>
 </a></div>
 <div id="home" class="card">
-  <h2>404.</h2>
-  <div id="shortBio">
-    <p>Not sure how you managed this, but you've found a page that doesn't exist!</p>
-    <p>Try either hitting the 'back' button of your browser, or click on 'home' to be sent back to the main landing page.</p>
+  <div id="news">
+    <div id="news-title">
+      <h2>news archive</h2>
+    </div>
+    <ul>
+      {% for item in site.data.news limit: 8 %}
+      <li>
+        <span class="news-date">{{item.date | date: "%d %B %Y"}}</span>
+        <span class="separator">|</span>
+        <span><p>{{item.headline}}</p></span>
+      </li>
+      {% endfor %}
+    </ul>
+    <div id="news-more">
+      <a href="./">back.</a>
+    </div>
   </div>
-
 </body>
 </html>
