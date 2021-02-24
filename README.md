@@ -1,56 +1,7 @@
 ## Personal Site
 
-Lovingly cloned from (Mor Naaman's site)[http://mornaaman.com]. The structure and coding was wonderful.
+My personal website. [Accessible here.](https://anthonypinter.com)
 
-This is under construction. It likely still looks a lot like Mor's. That will change over time.
+As my about page says, the original design of this site is lovingly cloned from [Mor Naaman's site](http://mornaaman.com). The structure and coding was wonderful. The original repo for that project can be found [here](https://github.com/sTechLab/mornaaman.com). Mor's site uses Gulp, which I am less familiar with. I also enjoy the functionality that the [IDlab website](https://cmci.colorado.edu/idlab/) (my advisor's lab!) has through Jekyll.
 
-
-## From the original instructions
-
-### Installation:
-
-##### Clone the project
-```
-git clone git@github.com:\<GIT URL\>
-```
-or
-```
-git clone https://github.com/sTechLab/mornaaman.com.git
-```
-
-##### Go into the folder and install the required package
-
-```
-npm install
-sudo npm install -g gulp
-```
-### Update/compile
-
-##### Pull the project
-```
-git pull https://github.com/sTechLab/mornaaman.com.git
-```
-
-##### Compile the source code
-
-```
-gulp
-```
-
-##### Update files on server
-
-The compiled files are under the dist/ folder.
-
-To preview run a simple server under dist/, e.g.
-```
-python -m SimpleHTTPServer
-```
-(view at localhost:8000 )
-
-Go into the dist folder and upload updated files to the server, e.g.
-
-```
-scp index.html USER@SERVER:coursewww/mor/htdocs
-scp main.js USER@SERVER:coursewww/mor/htdocs
-scp -r assets USER@SERVER:coursewww/mor/htdocs
-```
+So I pulled Mor's formatting into Jekyll. Here's how I did it.
