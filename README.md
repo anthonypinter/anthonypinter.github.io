@@ -14,12 +14,13 @@ Here's how to do it:
 
 ### Set-up Jekyll
 
-Wherever you set up that clone, navigate to it and run the following to set up Jekyll and run it on your virtual machine at `http://localhost:4000`.
+Wherever you set up that clone, navigate to it and run the following to set up Jekyll....
 
 ````
 bundle install
 ````
 
+...and run it on your virtual machine at `http://localhost:4000`.
 ````
 bundle exec jekyll serve
 ````
