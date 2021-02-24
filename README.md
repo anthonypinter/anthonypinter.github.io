@@ -1,4 +1,4 @@
-## Personal Site
+# Personal Site
 
 My personal website. [Accessible here.](https://anthonypinter.com)
 
@@ -25,8 +25,21 @@ bundle install
 bundle exec jekyll serve
 ````
 
-### Adjust the CSS
+Navigating to `http://localhost:4000` should result in a lovely recreation of my site.
+
+## What matters in this repo?
+
+The following files are important. They'll be the ones you want to change to make the site look more like you and less like me.
+
+* `_data/news.yml` and `_data/publications.yml` are data files that house my news and publications, respectively. Both have templates of the structure at the top that you can replicate.
+* `_includes/head.html` has the meta information for the site. You'll want to change my name.
+* `/assets` is where you'll want to house pictures, my CV, and publication PDFs (the last category lives in `/assets/papers`).
+* `/js/main.js` is where the CSS for the site is (see below for an explanation of my blasphemous web design choice here).
+* `_config.yml` has some information about the site in it that you'll want to adjust.
+
+
+### A note about my CSS choices
 
 In the switchover from Gulp based compiler to Jekyll, I was lazy. The css and scss files located in `/css` don't do anything. Ignore them.
 
-Instead, the CSS is inconveniently housed in `/js/main.js` on **line 83**. In more heavy duty production, this would be a nightmare. However, for a 4-5 page, mostly static site... idgaf. Do with this what you will (but if you have working knowledge of JS... which I don't... and happen to fix this so that it references a standalone CSS/SCSS file please do let me know).
+Instead, the CSS is inconveniently housed in `/js/main.js` on **line 83**. In a more heavy duty production, this would be a nightmare. However, for a 4-5 page, mostly static site... idgaf. Do with this what you will (but if you have working knowledge of JS... which I don't... and happen to fix this so that it references a standalone CSS/SCSS file please do let me know).
