@@ -3,35 +3,11 @@ layout: default
 section_id: home
 ---
 
-  <div class="left">
-    <div id="headshot">
-      <a href="/"><img src="./assets/headshot.jpg"></a>
-    </div>
-    <a href="/"><h1>Anthony Pinter.</h1></a>
-    <ul id="navi">
-      <li id="navi-home">
-        <a>home.</a>
-      </li><p></p>
-      <li id="navi-about">
-        <a>about.</a>
-      </li><p></p>
-      <li id="navi-publications">
-        <a>publications.</a>
-      </li>
-    </ul>
-
-    <div id=external-links>
-      <div id = external-link>
-        <a href="/contact.html">contact me.</a>
-      </div>
-    </div>
-  </div>
   <div id="home" class="card">
     <h2>hello.</h2>
     <div id="shortBio">
       <p>I am a <a href="https://www.colorado.edu/cmci/people/graduate-students/information-science/anthony-pinter">PhD Candidate in Information Science</a> at the University of Colorado Boulder where I work with <a href="https://www.jedbrubaker.com">Jed Brubaker</a> and <a href="https://cmci.colorado.edu/idlab/">the Identity Lab</a>. My research focuses on understanding the experiences people have during life transitions and how those experiences are represented in sociotechnical systems. I am particularly interested in how people navigate the digital connections that are left in the wake of a romantic break-up.</p>
       <p>I concurrently hold <a href="https://ist.psu.edu/directory/atp136">a position as Adjunct Part-Time Faculty</a> at Penn State's College of Information Sciences and Technology, where I teach through Penn State's World Campus program.</p>
-      <p>During the 2021-22 academic year, I am serving as the <a href="https://www.colorado.edu/gpsg/anthony-pinter">Speaker of the Assembly and Senator for the College of Media, Communication, and Information</a> (with Emily Loker, COMM) for the <a href="https://www.colorado.edu/gpsg/">Graduate and Professional Student Government (GPSG) at CU Boulder</a>.</p>
       <p>For more information about my past and present professional activities, see <a href="/assets/pintercv.pdf">my curriculum vitae</a>. For more about me, have a look at the <a href="/#about">about page</a>.</p>
     </div>
 
@@ -53,38 +29,3 @@ section_id: home
       </div>
     </div>
   </div>
-
-  <div id="about" class="card">
-    <h2>more about me.</h2>
-    <div id="fullBio">
-      <p>I come from a family of educators, and was afforded the opportunity to see different parts of the country while <a href="https://altoona.psu.edu/person/brad-pinter-phd">my father</a> completed his PhD, post-doc, and got his first academic position. Because of my background, I knew early on I wanted to pursue a career in research and teaching. After a brief failed stint as an engineering student, I completed my B.S. and M.S. in Information Sciences and Technology at the Pennsylvania State University in 2015 and 2017, respectively. My M.S. was overseen by <a href="https://faculty.ist.psu.edu/lyarger/">Lynette (Kvasny) Yarger</a>. While at Penn State, I competed in track and field, specializing in the multi-event disciplines.</p>
-      <p>Since moving to Colorado, I've leaned into the lifestyle you would expect a Coloradan have. I spend most of my free time riding or thinking about bikes and skis (depending on the season). I ride all disciplines on bikes year round, but train specifically for long XC-style mountain bike races like the <a href="https://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/">Leadville 100 MTB </a>. During the winter, I've confined myself to on-piste or sidecountry skiing, but I expect that to change within the next year. I have also continued my involvement in track and field as the high jump and multi-events coach at Boulder High School and a USATF Level 1 Coach.</p>
-    </div>
-    <h2>about this site.</h2>
-    <div id="fullBio">
-      <p>For a long time, I had a static website inspired primarily by <a href="ttps://github.com/weightshift/The-Personal-Page">The Personal Page</a> by Naz Hamid at <a href="https://weightshift.com">Weightshift</a>. However, as I enter the last year of my doctoral work, I felt it was time to do something a bit more substantial. I've always been a bit of a minimalist when it comes to design. I was taken with <a href="http://mornaaman.com">Mor Naaman's personal website</a>, but wanted the Jekyll functionality I had come to enjoy from working on <a href="https://cmci.colorado.edu/idlab/">the Identity Lab's site</a>.</p>
-      <p>So I combined the two (with substantial design tweaks), and here we are. You can find the repo for this particular design on <a href="https://github.com/anthonypinter/anthonypinter.github.io">my Github</a>.</p>
-    </div>
-  </div>
-
-  <div id="publications" class="card">
-    <h2>recent publications.</h2>
-    <ul>
-      {% for item in site.data.publications limit: 4 %}
-      <li>
-        <div id="p-info">
-          <span id="p-author">{{item.authors}}. </span><span id="p-author">{{item.year}}.</span>
-          <p id="p-title">{{item.title}}.</p>
-          <p id="p-source">{{item.venue}}.</p>
-          <span id="p-source">{{item.pdf}}</span>
-        </div>
-      </li>
-      {% endfor %}
-      </ul>
-      <div id="news">
-        <div id="news-more">
-          <a href="https://scholar.google.com/citations?user=Vq_3XusAAAAJ&hl=en&oi=ao">more via google scholar</a><p></p>
-          <a href="/assets/pintercv.pdf">or via my cv.</a>
-        </div>
-      </div>
-    </div>
