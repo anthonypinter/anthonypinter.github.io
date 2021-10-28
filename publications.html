@@ -14,7 +14,11 @@ section_id: home
           <span id="p-author">{{item.authors}}. </span><span id="p-author">{{item.year}}.</span>
           <span id="p-title">{{item.title}}.</span>
           <span id="p-source"><em>{{item.venue}}.</em></span><br>
-          <span id="p-source">{{item.pdf}}</span><p>
+          <span id="p-source"><a href="./assets/papers/{{item.pdf}}">PDF</a></span>
+          {% if item.blog %}
+            <span id="p-source"><a href="{{item.blog}}">Blog</a>
+          {% endif %}
+          <p>
         </div>
       </li>
       {% endfor %}

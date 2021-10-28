@@ -12,14 +12,21 @@
 
 ## 2021
 
+ - authors   : <b>Anthony T. Pinter</b>
+   title     : You Got Yourself A Whole New Life, and All I’ve Got is Half This Old One&#58; Breaking Up and Moving On in the Social Media Age
+   year      : 2021
+   venue     : Companion Publication of the 2021 Conference on Computer Supported Cooperative Work (CSCW '21)
+   pdf       : cscw2021dc.pdf
+   blog      :
+
 ## 2020
 
  - authors  : <b>Anthony T. Pinter</b>, Morgan Klaus Scheuerman, & Jed R. Brubaker
    title    : Entering doors, evading traps&#58; Benefits and risks of visibility during transgender coming outs
    year     : 2020
    venue    : Proceedings of the ACM on Human Computer Interactions (CSCW 2020)
-   pdf      : <a href="./assets/papers/pinter-cscw2020.pdf">PDF</a>
-   blog     : <a href="https://medium.com/@anthonypinter/this-blog-post-summarizes-a-paper-about-how-transgender-and-non-binary-people-come-out-and-contend-bdfbcad39055">Blog</a>
+   pdf      : pinter-cscw2020.pdf
+   blog     : https://medium.com/@anthonypinter/this-blog-post-summarizes-a-paper-about-how-transgender-and-non-binary-people-come-out-and-contend-bdfbcad39055
 
  - authors  : Kayla M. Booth, Joslenne Pena, Elizabeth V. Eikey, Aisling Quigley, <b>Anthony T. Pinter</b>, & Joe Sanchez
    title    : Design, implementation, and reflections on teaching of computer programming modules to underrepresented students
@@ -37,4 +44,4 @@
    title    : P4KxSpotify&#58; A dataset of Pitchfork music reviews and Spotify musical features
    year     : 2020
    venue    : Proceedings of the International AAAI Conference on Web and Social Media (ICWSM 2020)
-   pdf      : <a href="./assets/papers/pinter-icwsm2020.pdf">PDF</a>
+   pdf      : pinter-icwsm2020.pdf
