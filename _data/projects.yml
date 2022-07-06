@@ -3,7 +3,12 @@
 #   link         : /codepoetry2021.html
 #   image        : assets/projects/.
 
- - title        : Break-up Feature Prototypes
-   description  : As part of my dissertation, I designed paper prototypes of features that might help people manage the possessions and connections that are left behind online after a break-up.
-   link         : dissertationprototypes.html
-   #image        : assets/projects/.
+- title        : Break-up Feature Prototypes
+  description  : As part of my dissertation, I designed paper prototypes of features that might help people manage the possessions and connections that are left behind online after a break-up.
+  link         : /project/dissertationprototypes.html
+  #image        : assets/projects/.
+
+- title         : Code Poetry
+  description   : I participated in Code Poetry 2021, submitting a poem in Python about relationships, break-ups, and memory.
+  link          : /project/codepoetry2021.html
+  #image         : assets/projects/
