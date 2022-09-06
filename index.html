@@ -17,7 +17,7 @@ section_id: home
         <h2>most recently.</h2>
       </div>
       <ul>
-        {% for item in site.data.news limit: 3 %}
+        {% for item in site.data.news limit: 4 %}
         <li>
           <span class="news-date">{{item.date | date: "%d %B %Y"}}</span>
           <span class="separator">|</span>
