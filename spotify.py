@@ -6,9 +6,9 @@ import json
 from pprint import pprint
 
 '''
-export SPOTIPY_CLIENT_ID='5fa292d4fc2d48d4aaaa20b221c7ff49'
-export SPOTIPY_CLIENT_SECRET='248c2f43214d43b3ab18acc48c91adb3'
-export SPOTIPY_REDIRECT_URI='http://localhost:8080/callback'
+export SPOTIPY_CLIENT_ID=''
+export SPOTIPY_CLIENT_SECRET=''
+export SPOTIPY_REDIRECT_URI=''
 '''
 
 scope = "user-library-read"
