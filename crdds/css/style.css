@@ -232,49 +232,49 @@ footer > div {
 /* ----------------------------------------------------------------- */
 
 .background {
-  background: url("/img/lock-light.png") repeat;
+  background: url("../img/lock-light.png") repeat;
   background-size: 110px;
   padding-left: 1em;
   padding-right: 1em;
 }
 
 .background-q1 {
-  background: url("/img/water-pollutants-light.png") repeat;
+  background: url("../img/water-pollutants-light.png") repeat;
   background-size: 110px;
 }
 
 .background-q2 {
-  background: url("/img/air-purification-light.png") repeat;
+  background: url("../img/air-purification-light.png") repeat;
   background-size: 110px;
 }
 
 .background-q3 {
-  background: url("/img/wildfire-mitigation-light.png") repeat;
+  background: url("../img/wildfire-mitigation-light.png") repeat;
   background-size: 110px;
 }
 
 .background-q4 {
-  background: url("/img/newletter-light.png") repeat;
+  background: url("../img/newletter-light.png") repeat;
   background-size: 110px;
 }
 
 .background-q5 {
-  background: url("/img/particulate-pollution-light.png") repeat;
+  background: url("../img/particulate-pollution-light.png") repeat;
   background-size: 110px;
 }
 
 .background-q6 {
-  background: url("/img/resource-conflict-light.png") repeat;
+  background: url("../img/resource-conflict-light.png") repeat;
   background-size: 110px;
 }
 
 .background-q7 {
-  background: url("/img/research-funding-light.png") repeat;
+  background: url("../img/research-funding-light.png") repeat;
   background-size: 110px;
 }
 
 .background-conc {
-  background: url("/img/air-purification-light.png") repeat;
+  background: url("../img/air-purification-light.png") repeat;
   background-size: 110px;
 }
 

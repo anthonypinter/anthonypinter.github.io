@@ -1,6 +1,6 @@
 var clicked = false;
-const open_url = "/img/open.png";
-const close_url = "/img/close.png";
+const open_url = "./img/open.png";
+const close_url = "./img/close.png";
 
 let agreeCalculation = 0.00;
 let disagreeCalculation = 0.00;
