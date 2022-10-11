@@ -10,7 +10,7 @@ let page = "";
 let choice1 = false;
 let choice2 = false;
 
-this.endpoint = 'https://crdds-climate-game.herokuapp.com/';
+this.endpoint = 'https://crdds-climate-game.herokuapp.com';
 
 var data;
 
