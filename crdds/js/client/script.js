@@ -22,6 +22,7 @@ async function _dataLoad() {
 };
 
 data = _dataLoad();
+console.log(data);
 
 /*
 function displayCredits() {
