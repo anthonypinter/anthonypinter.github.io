@@ -25,7 +25,7 @@
         </div>
       
         <div class="question-container">
-          <div class="question" id="option1" onclick="changeImage1()">
+          <div class="question" id="option1" onclick="changeImage1(); return false">
             <div class="card">
               <img class="flexbox-item flexbox-item-1 opt-img" id="img-1" src="./img/close.png" />  
               <img class="flexbox-item flexbox-item-1 opt-img" id="img-top" src="./img/open.png" />
@@ -35,7 +35,7 @@
             </div>
           </div>
           
-          <div class="question" id="option2" onclick="changeImage2()">
+          <div class="question" id="option2" onclick="changeImage2(); return false">
             <div class="card">
               <img class="flexbox-item flexbox-item-1 opt-img" id="img-2" src="./img/close.png" />  
               <img class="flexbox-item flexbox-item-1 opt-img" id="img-top" src="./img/open.png" />
@@ -50,7 +50,7 @@
       
         <div class="foot">
           <div class="flexbox-container percent-block" id="result" style="display:none;">
-            <h2 id="percent" class="flexbox-item"><span id="agree"></span>% of researchers made the same decision. <span id="disagree"></span>% did not.</h2>
+            <h2 id="percent" class="flexbox-item">Of <span id="total"></span> researchers, <span id="agree"></span>% of researchers made the same decision. <span id="disagree"></span>% did not.</h2>
             <div class="next">
               <button onclick="pushData()" type="button"><a href="q3.html">Next question</a></button>
             </div>

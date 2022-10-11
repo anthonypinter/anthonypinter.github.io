@@ -52,36 +52,48 @@ else if (document.URL.includes("q7.html") ) {
   page = "q7"
 }
 
-async function changeImage1() {
+function changeImage1() {
+  changeImage1 = function(){}; // kill it as soon as it was called
+  changeImage2 = function(){}; // kill it as soon as it was called
   var img_obj = document.getElementById("img-1");
   choice1 = true;
   
-  if(img_obj.src == close_url){
-  }
-    if (!clicked && (img_obj.src).includes('close')) {
-      img_obj.src = open_url;
-      clicked = true;
-      document.getElementById("img-2").src = close_url;
-      document.getElementById("result").style.display = 'block';
-      document.getElementById("result").style.textAlign='center';
-      //document.getElementById("result").style.justifyContent = 'center';
-    }
+  if (!clicked) {
+    clicked = true;
+    // do something
   
+    img_obj.src = open_url;
+    clicked = true;
+    document.getElementById("img-1").src = close_url;
+    document.getElementById("img-top").src = close_url;
+    document.getElementById("result").style.display = 'block';
+    document.getElementById("result").style.textAlign='center';
+    //document.getElementById("result").style.justifyContent = 'center';
+  }
   this._refresh();
   
   // let yesValue = data.q1.Yes + 1;
 }
 
+
+
 function changeImage2() {
+  changeImage2 = function(){}; // kill it as soon as it was called
+  changeImage1 = function(){}; // kill it as soon as it was called
   var img_obj = document.getElementById("img-2");
   choice2 = true;
+
+  if (!clicked) {
+    clicked = true;
+    // do something
   
-  if (!clicked && (img_obj.src).includes('close')) {
     img_obj.src = open_url;
     clicked = true;
     document.getElementById("img-1").src = close_url;
+    document.getElementById("img-top").src = close_url;
     document.getElementById("result").style.display = 'block';
-    document.getElementById("result").style.textAlign='center'
+    document.getElementById("result").style.textAlign='center';
+    //document.getElementById("result").style.justifyContent = 'center';
   }
 
   this._refresh();
@@ -91,6 +103,9 @@ function changeImage2() {
 async function _refresh() {
   const response = await fetch(this.endpoint);
   const data = await response.json();
+
+  let totalValue = (data[page][0]["Yes"]+data[page][0]["No"]);
+
   if (choice1 === true) {
     agreeCalculation = 100 * ( (data[page][0]["Yes"])/(data[page][0]["Yes"] + data[page][0]["No"]));
     disagreeCalculation = (100 - agreeCalculation);
@@ -98,6 +113,7 @@ async function _refresh() {
     let yesValue = data[page][0]["Yes"] + 1;
     console.log(yesValue);
   
+    document.getElementById("total").innerText = `${ totalValue }`;
     document.getElementById("agree").innerText = `${ agreeCalculation.toFixed(1) }`;
     document.getElementById("disagree").innerText = `${ disagreeCalculation.toFixed(1) }`;
     
@@ -107,6 +123,7 @@ async function _refresh() {
     agreeCalculation = (100 * (data[page][0]["No"])/(data[page][0]["Yes"] + data[page][0]["No"]));
     disagreeCalculation = (100 - agreeCalculation);
   
+    document.getElementById("total").innerText = `${ totalValue }`;
     document.getElementById("agree").innerText = `${ agreeCalculation.toFixed(1) }`;
     document.getElementById("disagree").innerText = `${ disagreeCalculation.toFixed(1) }`;
 
