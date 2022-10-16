@@ -10,7 +10,7 @@ let page = 0;
 let choice1 = false;
 let choice2 = false;
 
-this.endpoint = 'http://localhost:3000/questions/';
+this.endpoint = '/questions/';
 
 /*
 function displayCredits() {
