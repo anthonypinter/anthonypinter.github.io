@@ -10,19 +10,7 @@ let page = "";
 let choice1 = false;
 let choice2 = false;
 
-this.endpoint = 'https://crdds-climate-game.herokuapp.com';
-
-var data;
-
-async function _dataLoad() {
-  const response = await fetch(this.endpoint);
-  const x = await response.json()
-  .then(x => { return x } );
-  console.log(x);
-};
-
-data = _dataLoad();
-console.log(data);
+this.endpoint = 'localhost:3000/questions/';
 
 /*
 function displayCredits() {
@@ -139,8 +127,9 @@ async function pushData() {
         console.log("yes");
             fetch(this.endpoint, {
                 method: "post",
+                mode: 'cors',
                 body: 
-                  `add=Yes&question=${ page }`,
+                  `question=${ page }&answer=yes`,
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             }
@@ -150,7 +139,8 @@ async function pushData() {
         console.log("no");
         fetch(this.endpoint, {
             method: "post",
-            body: `add=No&question=${ page }`,
+            mode: 'cors',
+            body: `question=${ page }&answer=no`,
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             }
