@@ -10,7 +10,7 @@ let page = 0;
 let choice1 = false;
 let choice2 = false;
 
-this.endpoint = '/questions/';
+this.endpoint = 'http://ec2-52-39-147-47.us-west-2.compute.amazonaws.com:3000';
 
 /*
 function displayCredits() {
