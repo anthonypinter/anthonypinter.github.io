@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/9ec0b1b260.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">  <title>Data Storytelling</title>
+</head>
+<body>
+  <section class='filler'>
+    <br><br><br><br>
+    <h1>Judging a Book by its Title...</h1>
+    <img src="img/empty-shelf-top.png" alt="empty shelf">
+    <p id="credits">A data visualization story by Jack Manning</p>
+    <br>
+    <p>We all know or have heard the phrase “don’t judge a book by it’s cover”, but what about it’s title? As a lover of fantasy and avid reader I stumbled upon a pattern in the books on the shelves of my local library, finding a lot of them fell into the structure of blank of blank: game of thrones, way of kings, color of magic, wheel of time, etc. And the more I thought about popular and beloved series the more this pattern seemed to emerge. I was fascinated, hooked into finding the truth, and to uncover what other patterns might be out there for book titles to follow.
+    </p>
+    <p>I embarked on this journey with the help of the Goodreads API, a wonderful source of all things nerdy books that provided
+      a list of books and their information on the scale that I had hoped. I was able to collect roughly 15,000 Fantasy and Sci-Fi
+      titles to do analysis on, and after some extensive cleaning and data organization I had a dataset rich with interesting 
+      trends and unique quirks. Scroll down below to begin discovering what the world of Fantasy book titles has to offer!
+    </p>
+    <br><br><br><br><br><br><br>
+  </section>
+  
+  <section class='full-scroll'>
+    <div class='scroll-section'>
+        <figure class='sticky'>
+          <div class="typewriter"></div>
+          <div class='center'>
+            <img src="img/empty-shelf.png" alt="empty shelf" id="center">
+          </div>
+        </figure>
+        <div class='step' data-text="This bookshelf represents all of the fantasy books that were analyzed as a part of this story" data-pic="img/empty-shelf.png" data-index="0"></div>
+        <div class='step' data-text="These blue books on the left represent all of the titles that fall under the blank of blank trope" data-pic="img/first-shelf.png" data-index="1"></div>
+        <div class='step' data-text="This green novel shows the amount of books that are blank and blank" data-pic="img/second-shelf.png" data-index="2"></div>
+        <div class='step' data-text="These purple books shows the amount of titles that are The Adjective Noun" data-pic="img/third-shelf.png" data-index="3"></div>
+        <div class='step' data-text="This red section shows the amount of books that have one word titles" data-pic="img/fourth-shelf.png" data-index="4"></div>
+        <div class='step' data-text="This yellow novel shows the amount of books that have the one word titles" data-pic="img/fifth-shelf.png" data-index="5"></div>
+        <div class='step' data-text="This last section shows the amount of books that do not follow one of these tropes" data-pic="img/sixth-shelf.png" data-index="6"></div>
+    </div>
+  </section>
+  <section class='fillerBot'>
+    <p>Here there will be the final wrap up viz for the bookshelf above, as well as some indicator that the "scrollytelling" portion is complete. 
+        Take some time to explore the bookshelves below, reading through the library of Sci-Fi and Fantasy book title knowledge. 
+    </p>
+    <div class="library">
+        <a id="backButton"><i class="fa-solid fa-arrow-left"></i></a>
+        <map name="library-map"> 
+            <area shape="rect" title="Blank Of Blank" coords="276,0,397,162" target="_blank" id="blue"/>
+            <area shape="rect" title="One Word" coords="118,177,240,363" target="_blank" id="red"/>
+            <area shape="rect" title="The Adjective Noun" coords="810,0,920,162" target="_blank" id="purple"/>
+            <area shape="rect" title="The One Word" coords="922,177,1036,363" target="_blank" id="yellow"/>
+            <area shape="rect" title="Blank and Blank" coords="378,378,469,562" target="_blank" id="green"/>
+        </map>
+        <img src="img/library-v26.png" alt="vector art of a bookshelf" width="1100" height="600" usemap="#library-map">
+        
+        <div class="blankOfBlankBook">
+            <div class="open-book">
+                <div class="prev-corner"></div>
+            </div>
+            <div id="book" class="book">
+                <div class="middle-line"></div>
+                <div class="divider-line"></div>
+                <div class="next-corner"></div>
+                <div id="p1" class="paper">
+                    <div class="front">
+                        <div id="bofb1" class="front-content">
+                            <h3>A Title of Words</h3>
+                            <p class="instruction">Click through the pages to discover more!</p>
+                        </div>
+                    </div>
+                    <div id="bofb-cover" class="back">
+                        <div id="b1" class="back-content">
+                            <h1></h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="p2" class="paper">
+                    <div class="front">
+                        <div id="f2" class="front-content">
+                            <h3>Blank of Blank books</h3>
+                            <p>This trope is the largest group of titles I could find, including 2,729 titles, a total of 18.8% of all the Fantasy and Sci-Fi titles that were included in the dataset.</p>
+                            <p>Not only did it have the largest quantity it also has some of the best quality books, according to popularity. The two most famous fantasy fandoms, Game of Thrones and Lord of the Rings, both fall into this trope. And their new TV shows, House of Dragons and Rings of Power respectively, also fall victim to this common title structure.</p>
+                            <p>Other notable inclusions are...</p>
+                            <ul>
+                                <li>Life of Pi</li>
+                                <li>Way of Kings</li>
+                                <li>Throne of Glass</li>
+                                <li>The Chronicles of Narnia</li>
+                                <li>Name of the Wind</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b2" class="back-content">
+                            <h3>Word Commonalities</h3>
+                            <p>This is a word cloud of the most commmon words that fill in the blanks in the blank of blank titles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="p3" class="paper">
+                    <div class="front">
+                        <div id="bofbCloud" class="front-content">
+                            <img class="wordCloud" src="img/bofb-cloud-edited.png" alt="word cloud of blank of blank titles" width="100%">
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="bofb-back" class="back-content">
+                            <h1>Back Cover</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blankAndBlankBook">
+            <div class="open-book">
+                <div class="prev-corner"></div>
+            </div>
+            <div id="book" class="book">
+                <div class="middle-line"></div>
+                <div class="divider-line"></div>
+                <div class="next-corner"></div>
+                <div id="p1" class="paper">
+                    <div class="front">
+                        <div id="bandb1" class="front-content">
+                            <h3>Different and Rare</h3>
+                            <p class="instruction">Click through the pages to discover more!</p>
+                        </div>
+                    </div>
+                    <div id="bandb-cover" class="back">
+                        <div id="b1" class="back-content">
+                            <h1></h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="p2" class="paper">
+                    <div class="front">
+                        <div id="f2" class="front-content">
+                            <h3>Blank and Blank books</h3>
+                            <p>This trope is the partner of the blank of blank books, not taking up quite as many titles but including a hefty amount of the overall collection. With 650 titles and 4.5% of the booklist there are many notable titles such as...</p>
+                            <ul>
+                                <li>Harry Potter and the Sorcerer's Stone</li>
+                                <li>Green Eggs and Ham</li>
+                                <li>Charlie and the Chocolate Factory</li>
+                                <li>The Lion, the Witch and the Wardrobe</li>
+                                <li>Shadow and Bone</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b2" class="back-content">
+                            <h3>Word Commonalities</h3>
+                            <p>This is a word cloud of the most commmon words that fill in the blanks in the blank and blank titles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="p3" class="paper">
+                    <div class="front">
+                        <div id="f3" class="front-content">
+                            <img src="img/bandb-cloud-v2.png" alt="word cloud for blank and blank titles" width="100%">
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="bandb-back" class="back-content">
+                            <h1>Back Cover</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="theAdjNounBook">
+            <div class="open-book">
+                <div class="prev-corner"></div>
+            </div>
+            <div id="book" class="book">
+                <div class="middle-line"></div>
+                <div class="divider-line"></div>
+                <div class="next-corner"></div>
+                <div id="p1" class="paper">
+                    <div class="front">
+                        <div id="tan1" class="front-content">
+                            <h3>The Unique Item</h3>
+                            <p class="instruction">Click through the pages to discover more!</p>
+                        </div>
+                    </div>
+                    <div id="tan-cover" class="back">
+                        <div id="b1" class="back-content">
+                            <h1></h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="p2" class="paper">
+                    <div class="front">
+                        <div id="f2" class="front-content">
+                            <h3>The Adjective Noun books </h3>
+                            <p>This trope stands alone, with no companion to add to it's numbers but still includes over 1,500 titles and a substantial 10.5% of the entire dataset.</p>
+                            <p>Books in this category include...</p>
+                            <ul>
+                                <li>The Hunger Games</li>
+                                <li>The Giving Tree</li>
+                                <li>The Two Towers</li>
+                                <li>The Final Empire</li>
+                                <li>The 5th Wave</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b2" class="back-content">
+                            <h3>Word Commonalities</h3>
+                            <p>This is a word cloud of the most commmon words that fill in the blanks in the adjective noun titles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="p3" class="paper">
+                    <div class="front">
+                        <div id="f3" class="front-content">
+                            <img src="img/tan-cloud-edited.png" alt="word cloud for the adjective noun titles" width="100%">
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="tan-back" class="back-content">
+                            <h1>Back Cover</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="oneWordBook">
+            <div class="open-book">
+                <div class="prev-corner"></div>
+            </div>
+            <div id="book" class="book">
+                <div class="middle-line"></div>
+                <div class="divider-line"></div>
+                <div class="next-corner"></div>
+                <div id="p1" class="paper">
+                    <div class="front">
+                        <div id="ow1" class="front-content">
+                            <h3>Word</h3>
+                            <p class="instruction">Click through the pages to discover more!</p>
+                        </div>
+                    </div>
+                    <div id="ow-cover" class="back">
+                        <div id="b1" class="back-content">
+                            <h1></h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="p2" class="paper">
+                    <div class="front">
+                        <div id="f2" class="front-content">
+                            <h3>One Word titles</h3>
+                            <p>This is the second largest category of books, coming in with 2,636 book titles, 18.2% of the overall dataset. This trope was far larger than I had expected as there are only so many words that an author can use to entice a reader.</p>
+                            <p>Despite this there are some extremely well-known titles in this category, including...</p>
+                            <ul>
+                                <li>Dune</li>
+                                <li>Twilight</li>
+                                <li>Divergent</li>
+                                <li>Watchmen</li>
+                                <li>1984</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b2" class="back-content">
+                            <h3>Word Commonalities</h3>
+                            <p>This is a word cloud of the most commmon words that fill in the blanks in one word titles. The most popular by far is "legacy" with there being a total of 12 distinct books, written by different authors, with that as the title.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="p3" class="paper">
+                    <div class="front">
+                        <div id="f3" class="front-content">
+                            <img src="img/ow-cloud-v2.png" alt="word cloud of one word title words" width="100%">
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="ow-back" class="back-content">
+                            <h1>Back Cover</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="theOneWordBook">
+            <div class="open-book">
+                <div class="prev-corner"></div>
+            </div>
+            <div id="book" class="book">
+                <div class="middle-line"></div>
+                <div class="divider-line"></div>
+                <div class="next-corner"></div>
+                <div id="p1" class="paper">
+                    <div class="front">
+                        <div id="tow1" class="front-content">
+                            <h3>The name</h3>
+                            <p class="instruction2">Click through the pages to discover more!</p>
+                        </div>
+                    </div>
+                    <div id="tow-cover" class="back">
+                        <div id="b1" class="back-content">
+                            <h1></h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="p2" class="paper">
+                    <div class="front">
+                        <div id="f2" class="front-content">
+                            <h3>The One Word books</h3>
+                            <p>This is the companion trope to one word titles, including enough individual books to be worth a mention as a part of this study. Similar to blank and blank titles it only takes up about 5% of the overall dataset, but that is over 620 titles.</p>
+                            <p>While the category is small the titles it includes have large franchises. Books in this category include...</p>
+                            <ul>
+                                <li>The Giver</li>
+                                <li>The Odyssey</li>
+                                <li>The Martian</li>
+                                <li>The Lorax</li>
+                                <li>The Stand</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b2" class="back-content">
+                            <h3>Word Commonalities</h3>
+                            <p>This is a word cloud of the most commmon words that fill in the blanks in the one word titles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="p3" class="paper">
+                    <div class="front">
+                        <div id="f3" class="front-content">
+                            <img src="img/tow-cloud-edited.png" src="word cloud" width="100%">
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="tow-back" class="back-content">
+                            <h1>Back Cover</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    
+  </section>
+  <script src="https://unpkg.com/d3@5.4.0/dist/d3.min.js"></script>
+  <script src="https://unpkg.com/enter-view@1.0.0/enter-view.min.js"></script>
+  <script src="https://unpkg.com/stickyfilljs@2.0.5/dist/stickyfill.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

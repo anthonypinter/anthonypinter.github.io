@@ -1,0 +1,150 @@
+body 
+{
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+a{
+  color:rgb(116, 135, 147);
+  font-family: Georgia;
+  font-size: 20px;
+}
+
+#sideScrolly 
+{
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#sideScrolly > * 
+{
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+#overlayScrolly
+{
+  position: relative;
+}
+
+h1
+{
+    color: rgb(70, 86, 97);
+    font-family: Georgia;
+    font-size: 70px;
+    text-align: center;
+}
+
+#sub
+{
+  color:rgb(116, 135, 147);
+  font-family: Georgia;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+#header
+{
+  color:rgb(70, 86, 97);
+  font-family: Georgia;
+  font-size: 50px;
+  text-align: center;
+  margin: 3rem;
+}
+
+#textBody
+{
+  color:rgb(46, 57, 65);
+  font-family: Georgia;
+  font-size: 24px;
+  margin-bottom: 3rem;
+}
+
+#graph_title
+{
+  color: rgb(43, 43, 43);
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Dubai Medium';
+}
+
+article
+{
+  position: relative;
+  max-width: 20rem;
+}
+
+.step 
+{
+  background-color:rgb(70, 86, 97);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-bottom: 10rem;
+}
+
+.step p
+{
+  font-family: Georgia;
+  color:rgb(255, 255, 255);
+  font-size: 24px;
+  text-align: left;
+}
+
+article.overlay_article
+{
+  max-width: 45rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+.overlay_step
+{
+  background-color:rgb(68, 61, 82);
+  padding: 0.5rem;
+  margin-bottom: 10rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.overlay_step p
+{
+  font-family: Georgia;
+  color:rgb(255, 255, 255);
+  font-size: 24px;
+  text-align: left;
+}
+
+
+/* GRAPHS */
+.graph
+{
+  position: -webkit-sticky;
+  position: sticky;
+  margin-left: 1rem;
+  top: 0;
+  height: 40rem;
+}
+
+.graph_fixed
+{
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+/* IMAGES */
+.img
+{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  /* Center everything inside */
+  display: flex;
+  justify-content: center;
+}

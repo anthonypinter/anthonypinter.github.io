@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+html {
+	background-color: #fff;
+}
+
+body {
+background-image: linear-gradient(to top, transparent 60px, #fff 60px, #fff 0);
+margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+p.abstract a {
+    text-decoration: none;
+    color: rgb(71, 132, 71)
+}
+
+p.abstract a:hover {
+    color: rgb(94, 171, 94);
+}
+
+.story-container {
+    width:100%;
+}
+
+.main-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+	
+}
+
+.header-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.grid-story {
+    background-color: dodgerblue; /* this is the color that comes up when hovered */
+    height: 300px;
+    width: 100%;
+    margin: 2em 0em;
+    padding: 2em 0em;
+    display: block;
+}
+
+.grid-story-overlay {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: .5s ease-in-out;
+    background-color: dodgerblue; /* this is the color that pops up initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.grid-story:hover .grid-story-overlay {
+    opacity: .5;
+}
+
+.story-image {
+    margin-left: 1rem;
+    min-width: 20rem;
+    max-width: 35rem;
+    margin-right: 1rem;
+    margin-left: 10rem;
+}
+
+.even-image {
+    margin-left: 15rem;
+}
+
+/* Page title */
+h1 {
+    width: auto;
+    height: auto;
+    font-family: 'Public Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 47px;
+    text-align: center;
+    
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+h2 {
+    width: auto;
+    height: auto;
+    font-family: 'Public Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 47px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+li {
+
+    height: auto;
+    text-align: left;
+    font-family: 'Public Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    padding-bottom: 0.2rem;
+    list-style-type: circle;
+}
+
+
+img {
+    width: 100%;
+    height: auto;
+    
+}
+
+
+
+.story-information {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    padding: 1rem;
+    margin-right: 2.5rem;
+}
+
+.even-story-information {
+    margin-right: 1rem;
+}
+
+.story-title {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 5px;
+    width: 75%;
+}
+
+.story-author {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin: 0;
+    margin-top: 5px;
+    width: 75%;
+}
+
+.story-abstract {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 1rem;
+    width: 60%;
+}
+
+/* Abstract about the course */
+
+.abstract {
+width: auto;
+height: auto;
+
+font-family: 'Public Sans', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 18px;
+text-align: center;
+
+color: #000000;
+}
+
+
+/* body-text */
+
+.body-text {
+
+width: auto;
+height: auto;
+font-family: 'Public Sans', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+text-align: center;
+
+color: #000000;
+}
+
+
+/* author-byline */
+
+.byline {
+width: 238px;
+height: 30px;
+
+font-family: 'Public Sans', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+text-align: center;
+
+color: #000000;
+}
+
+footer {
+	position: sticky;
+	position: -webkit-sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+	bottom: 0;
+    width: 100%;
+	z-index: -1;
+	height: 50px;
+	background-color: rgb(94, 171, 94);
+	color: white;
+	text-shadow: 2px 2px black;
+	padding: 0px 0;
+	text-align: center;
+    align-items: center;
+    font-family: 'Public Sans', sans-serif;
+    
+}
+
+
+/* -- CLASSES FOR SPECIFIC TITLE CARDS, ORGANIZED BY STUDENT -- */
+
+.manning {
+    background-color: rgba(239,247,235,255);
+}
+
+.moran {
+    background-color: rgba(4,80,133,255);
+    color: white;
+}
+
+.skuladotir {
+    background-color: rgba(101,154,155,255);
+}
+
+.jordan {
+    background-color: rgba(211,189,154,255);
+    
+}
+
+.guerrero {
+    background-color: rgba(255,169,48,255);
+}
+
+.allenbonney {
+    background-color: rgba(37,153,237,255);
+    color: white;
+}
+
+.pothala {
+    background-color: rgba(179,60,74,255);
+    color: white;
+}
+
+.agarwal {
+    background-color: rgba(215,220,244,255);
+}
+
+.mandal {
+    background-color: rgba(255,64,70,255);
+    color: white;
+}
+
+.almaiyouf {
+    background-color: rgba(255,241,179,255);
+}
+
+.anthony {
+    color: white;
+}

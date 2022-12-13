@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Epilogue:ital,wght@0,300;0,700;1,300&family=Libre+Bodoni:wght@700&family=Manrope:wght@200;300;400;600&family=Montserrat:wght@200;300;400;600;700;800&family=Nanum+Gothic&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:wght@600&family=Quicksand:wght@300;400;700&family=Varela&display=swap');
+
+body {
+    background: #e9e3f0;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.main-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+h3 {
+    width: 564px;
+    height: 0px;
+    
+    font-family: 'Pacifico';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 37px;
+    text-align: center;
+    color: #58c788; 
+}
+
+h1 {
+    width: 660px;
+    height: 225px;
+    
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 65px;
+    text-align: center;
+    
+    color: #000000;
+}
+
+.abstract {
+    width: 400px;
+    height: 30px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.byline {
+    display: center;
+    width: auto;
+    height: 35px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+}
+
+h2 {
+    width: 580px;
+    height: 20px;
+    
+    font-family: 'Permanent Marker';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 30px;
+    text-align: center;
+    
+    color: #6921bc;
+}
+
+.bodyText {
+    width: 1100px;
+    height: auto;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 30px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    color: #000000;
+}
+
+h6 {
+    width: 900px;
+    height: auto;
+    
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    color: #000000;
+}
+
+
+h4 {
+    width: 564px;
+    height: 30px;
+    
+    font-family: 'Permanent Marker';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: #6921bc;
+}
+
+h5 {
+    display: center;
+    width: auto;
+    height: 10px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 25px;
+    text-align: left;
+}
+.space {
+    padding-bottom: 7rem;
+}
+
+.flourish-embed {
+    width: 100%;
+}
+
+.flourish-credit {
+    display: none;
+}
+
+.secondViz {
+    height:auto;
+    width: 90%;
+}
+
+section {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  @media screen and (min-width: 35rem) { 
+    section {
+      flex-direction: row;
+    } 
+  } 
+  section > * {
+    flex: 1;
+  }
+  
+  article {
+    padding-left: 20px;
+    padding-right: 70px;
+    width: auto;
+  }
+  article p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 30px;
+    text-align: left;
+    
+    color: #000000;
+    /*line-height: 1.8;*/
+  }
+
+  @media screen and (min-width: 35rem) {
+    article p {
+      margin: 10;
+    }
+  }
+  @media screen and (min-width: 35rem) {
+    article p:not(:last-of-type) {
+      min-height: 15vh;
+    }
+  }
+  
+  figure {
+    align-items: left;
+    align-self: flex-start;
+    background: url(image.png);
+    display: flex;
+    height: auto;
+    margin: 40px;
+    width: 100%;
+    justify-content: center;
+    top: 3rem;
+  }
+
+  @media screen and (min-width: 35rem) {
+    figure {
+      position: sticky;
+    }
+  }
+
+ 
+
+
+

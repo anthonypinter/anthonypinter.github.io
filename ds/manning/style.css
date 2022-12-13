@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #FFEAD6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Abril Fatface', cursive;
+  color: #40434E;
+}
+h1 {
+  font-size: 70px;
+  z-index: 5;
+}
+p {
+  font-family: 'Roboto Slab', serif;
+  color: #40434E;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.filler {
+  text-align: center;
+}
+.fillerBot {
+  height: 45rem;
+  padding-top: 50px;
+}
+.fillerBot p {
+  text-align: center;
+}
+.full-scroll {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.full-scroll .scroll-section figure.sticky {
+  position: sticky;
+  width: 100%;
+  top: 35vh;
+}
+.full-scroll .step {
+  padding: 0;
+  max-width: 30rem;
+  margin: 0 auto;
+  position: relative;
+  min-height: 67vh;
+  margin-bottom: 1rem;
+}
+.full-scroll .step p {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 400;
+  background-color: #5b5b5b;
+  transition: background-color 250ms ease-in-out;
+  color: #f4f4f4;
+}
+
+.blankOfBlankBook {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.blankAndBlankBook {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.theAdjNounBook {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.oneWordBook {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.theOneWordBook {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.library {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+#blue {
+  cursor: pointer;
+}
+#red {
+  cursor: pointer;
+}
+#green {
+  cursor: pointer;
+}
+#yellow {
+  cursor: pointer;
+}
+#purple {
+  cursor: pointer;
+}
+
+.book {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  transition: transform 1.5s;
+}
+
+.open-book {
+  opacity: 0;
+  width: 500px;
+  height: 600px;
+}
+
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  perspective: 1500px;
+}
+
+.front, .back {
+  background-color: #F6F0E0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transition: transform 1.5s;
+}
+
+.front {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.back {
+  z-index: 0;
+}
+
+.front-content,
+.back-content {
+  width: 100%;
+  height: 100%;
+}
+
+.back-content {
+  transform: rotateY(180deg)
+}
+
+.flipped .front,
+.flipped .back {
+  transform: rotateY(-180deg);
+}
+
+i {
+  font-size: 50px;
+  color: gray;
+}
+
+#p1 {
+  z-index: 3;
+}
+
+#p2 {
+  z-index: 2;
+}
+
+#p3 {
+  z-index: 1;
+}
+
+#prev-btn {
+  display: none;
+}
+#front-cover-back {
+  outline: 5px solid #444B6E;
+}
+#b3 {
+  outline: 5px solid #444B6E;
+}
+
+.next-corner {
+  position: absolute;
+  width: 500px;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 1000;
+}
+.prev-corner {
+  position: relative;
+  width: 500px;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+}
+.middle-line {
+  height: 100%;
+  width: 6px;
+  top: 0;
+  left: 0px;
+  background: linear-gradient(to left, #F6F0E0, #F2E8CF);
+  opacity: 0;
+  position: absolute;
+  z-index: 1000;
+  transition: 1s;
+}
+.divider-line {
+  height: 100%;
+  width: 6px;
+  top: 0;
+  left: -6px;
+  background: linear-gradient(to left, #F2E8CF, #F6F0E0);
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  transition: 1s;
+}
+#sticky-text {
+  padding: 0;
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.typewriter {
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 20px;
+  color: #40434E;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .10em;
+}
+.animate {
+  animation: typing 2.5s steps(58, end)
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+.center {
+  text-align: center;
+}
+
+#f1 {
+  background-color: #444B6E;
+  outline: 2px solid #444B6E;
+}
+
+#f1 h3 {
+  color: #F6F0E0;
+  font-size: 40px;
+  padding-top: 100px;
+  text-align: center;
+}
+#f2 h3 {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 15px;
+}
+#b2 h3 {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 15px;
+}
+#backButton{
+  position: absolute;
+  right: 2%;
+  font-size: 30px;
+  line-height: 60px;
+  transition: .3s;
+  cursor: pointer;
+  transform: translate(0px, -250px);
+  display: none;
+}
+#backButton:hover {
+  transform: translate(-10px, -250px);
+}
+
+#bofb1 {
+  background-color: #588B8B;
+  outline: 2px solid #588B8B;
+}
+#bofb1 h3{
+  color: #F6F0E0;
+  font-size: 40px;
+  padding-top: 100px;
+  text-align: center;
+}
+#bofb-cover {
+  outline: 5px solid #588B8B;
+}
+#bofb-back {
+  outline: 5px solid #588B8B;
+}
+
+#bandb1 {
+  background-color: #A4C2A5;
+  outline: 2px solid #A4C2A5;
+}
+#bandb1 h3{
+  color: #F6F0E0;
+  font-size: 40px;
+  padding-top: 100px;
+  text-align: center;
+}
+#bandb-cover {
+  outline: 5px solid #A4C2A5;
+}
+#bandb-back {
+  outline: 5px solid #A4C2A5;
+}
+
+#tan1 {
+  background-color: #5A455E;
+  outline: 2px solid #5A455E;
+}
+#tan1 h3{
+  color: #F6F0E0;
+  font-size: 40px;
+  padding-top: 100px;
+  text-align: center;
+}
+#tan-cover {
+  outline: 5px solid #5A455E;
+}
+#tan-back {
+  outline: 5px solid #5A455E;
+}
+
+#ow1 {
+  background-color: #C92827;
+  outline: 2px solid #C92827;
+}
+#ow1 h3{
+  color: #F6F0E0;
+  font-size: 40px;
+  padding-top: 100px;
+  text-align: center;
+}
+#ow-cover {
+  outline: 5px solid #C92827;
+}
+#ow-back {
+  outline: 5px solid #C92827;
+}
+
+#tow1 {
+  background-color: #FEC010;
+  outline: 2px solid #FEC010;
+}
+#tow1 h3{
+  color: #40434E;
+  font-size: 40px;
+  padding-top: 100px;
+  text-align: center;
+}
+#tow-cover {
+  outline: 5px solid #FEC010;
+}
+#tow-back {
+  outline: 5px solid #FEC010;
+}
+ul {
+  list-style-type: square;
+  padding-left: 10%;
+}
+li {
+  font-family: 'Roboto Slab', serif;
+  color: #40434E;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 16px;
+}
+.instruction{
+  font-size: 12px;
+  font-family: 'Abril Fatface', cursive;
+  color: #F6F0E0;
+  transform: translate(0px, 400px);
+}
+
+.instruction2{
+  font-size: 12px;
+  font-family: 'Abril Fatface', cursive;
+  color: #444B6E;
+  transform: translate(0px, 400px);
+}
