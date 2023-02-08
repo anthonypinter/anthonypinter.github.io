@@ -13,201 +13,333 @@
 	<body>
 		<header id="intro">
 			<h1> Design by the Decade: <br> What the <span class="fortune">Fortune 500</span> Tells Us About the Best Logos of All Time</h1>
-			<p class="description"> In this story, we will determine the top corporate logos of all time based on Fortune 500 lists published since 1955. You will be able to explore the history of logos and learn about corporate design trends from each decade since the 1950s.</p>
+			<p class="description"> Explore the history of corporate logo design since the 1950s</p>
 			<p class="byline"> By Kyra Moran | December 2022</p>
 		</header>
 		
-		<nav id="navbar">
-			<h2 class="sr-only">Main Navigation</h2>
-			<ul>
-				<li><a href="#intro" class="navLink active">Intro</a></li>
-				<li><a href="#1950" class="navLink">1950s</a></li>
-				<li><a href="#1960" class="navLink">1960s</a></li>
-				<li><a href="#1970" class="navLink">1970s</a></li>
-				<li><a href="#1980" class="navLink">1980s</a></li>
-				<li><a href="#1990" class="navLink">1990s</a></li>
-				<li><a href="#2000" class="navLink">2000s</a></li>
-				<li><a href="#2010" class="navLink">2010s</a></li>
-				<li><a href="#2020" class="navLink">2020s</a></li>
-				<li><a href="#allTime" class="navLink">All Time</a></li>
-			</ul>
-		</nav>
-
 		<main>
-			<div class="scrollytelling">
+			<button onclick="topFunction()" id="myBtn" title="Scroll to Top">Back to Top</button>
 
-				<div class="sticky">
-					<div id="index-0" class="flourish-embed embed-1950" data-src="visualisation/11565271"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-1" class="flourish-embed embed-1960" data-src="visualisation/11892451"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-2" class="flourish-embed embed-1970" data-src="visualisation/11892650"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-3" class="flourish-embed embed-1980" data-src="visualisation/11892687"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-4" class="flourish-embed embed-1990" data-src="visualisation/11892759"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-5" class="flourish-embed embed-2000" data-src="visualisation/11892786"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-6" class="flourish-embed embed-2010" data-src="visualisation/11892936"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-7" class="flourish-embed embed-2020" data-src="visualisation/11892968"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-	                <div id="index-8" class="flourish-embed embed-allTime" data-src="visualisation/11892998"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-				</div> <!-- END STICKY -->
+			<section class="intro">
+				<p class="para2">Corporate logos are all around us. In fact, it is estimated that Americans see upwards of 4,000 logos in a single day. Covering a wide range of media including television, billboards, websites, magazines, and social media, it is almost impossible to avoid the influence of corporate branding. So, what makes a good logo? Why have some logos stood the test of time while others have faded into the past?</p>
+				<p>In this story, I gathered the Fortune 500 lists from every year since 1955, when the first Fortune 500 list was published. Given that these lists include the most profitable American companies from each year, it is fair to say that these companies have made a name for themselves by creating a brand identity, which of course includes a good logo. However, as you will see, corporate logo design changes with the times, and many companies rebrand in order for their logos to remain relevant. By examining the design trends of each decade and how logos have changed over time, maybe we can find a formula for the "perfect" corporate logo. Let's dive in.</p>
+			</section>
+
+			<nav id="navbar">
+				<h2 class="sr-only">Main Navigation</h2>
+				<ul>
+					<li><a onclick="updateChart(0)" href="#decade-1950s" class="navLink">1950s</a></li>
+					<li><a onclick="updateChart(1)" href="#decade-1960s" class="navLink">1960s</a></li>
+					<li><a onclick="updateChart(2)" href="#decade-1970s" class="navLink">1970s</a></li>
+					<li><a onclick="updateChart(3)" href="#decade-1980s" class="navLink">1980s</a></li>
+					<li><a onclick="updateChart(4)" href="#decade-1990s" class="navLink">1990s</a></li>
+					<li><a onclick="updateChart(5)" href="#decade-2000s" class="navLink">2000s</a></li>
+					<li><a onclick="updateChart(6)" href="#decade-2010s" class="navLink">2010s</a></li>
+					<li><a onclick="updateChart(7)" href="#decade-2020s" class="navLink">2020s</a></li>
+				</ul>
+			</nav>
+
+			<section class="scrollytelling">
 
 				<div class="scrolly">
-					<div id="decade-1950s" class='step' data-index='0'>
-		                <h2> Logos of the 1950s</h2>
-						<img src="img/Palette1.svg" alt="Color blocks showing the colors used in the top 1950s logos.">
-						<ol>
-							<li>General Motors</li>
-							<li>Esso (Standard Oil of New Jersey)</li>
-							<li>General Electric</li>
-							<li>Chrysler</li>
-							<li>Mobil</li>
-							<li>Gulf Oil</li>
-							<li>AT&T</li>
-							<li>Texaco</li>
-							<li>Amoco</li>
-							<li>CBS</li>
-						</ol>
-						<p>During WWII, Americans had put all efforts towards the war, bringing American production and manufacturing to a halt. In the 1950s, Americans were flush with cash and businesses expanded production, bringing about an unprecedented era of American consumerism. The rapid development of technology made it harder for companies to beat their competition with high-quality products alone, so this decade forced companies to distinguish themselves by creating a brand identity and reputation. With this rise in technology, television was also becoming a staple in the American household, and companies saw this as an opportunity for advertising.</p>
-						<p>The logos of the 1950s represent Modernism with sans-serif type, primary colors, and simple, geometric forms or symbols. Design was simplified through the integration of text and image into overlapping forms. American idealism in this decade led to experimentation in logo design, as designers sought to create logos that could work in various types of media and that could be recognized more quickly as the world picked up its pace after the war. Despite the rise in television, print media was still the primary source of information for Americans, so many logos remained without gradients, shadows, or intricate details that would be hard to print. </p>
-		            </div>
-					<div class='step' data-index='1' style="background-color: #045085; min-height: 75vh;"> </div>
-		            <div id="decade-1960s" class='step' data-index='1'>
-		                <h2> Logos of the 1960s</h2>
-						<ol>
-							<li>General Motors</li>
-							<li>Esso (Standard Oil of New Jersey)</li>
-							<li>Ford</li>
-							<li>General Electric</li>
-							<li>Mobil</li>
-							<li>Chrysler</li>
-							<li>Texaco</li>
-							<li>Gulf Oil</li>
-							<li>AT&T</li>
-							<li>IBM</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+					<div class="sticky">
+						<div id="index-0" class="flourish-embed embed-1950" data-src="visualisation/11565271"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-1" class="flourish-embed embed-1960" data-src="visualisation/11892451"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-2" class="flourish-embed embed-1970" data-src="visualisation/11892650"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-3" class="flourish-embed embed-1980" data-src="visualisation/11892687"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-4" class="flourish-embed embed-1990" data-src="visualisation/11892759"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-5" class="flourish-embed embed-2000" data-src="visualisation/11892786"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-6" class="flourish-embed embed-2010" data-src="visualisation/11892936"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-7" class="flourish-embed embed-2020" data-src="visualisation/11892968"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		                <div id="index-8" class="flourish-embed embed-allTime" data-src="visualisation/11892998"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+					</div> <!-- END STICKY -->
 
-					<div id="decade-1970s" class='step' data-index='2'>
-		                <h2> Logos of the 1970s</h2>
-						<ol>
-							<li>General Motors</li>
-							<li>Exxon</li>
-							<li>Ford</li>
-							<li>Mobil</li>
-							<li>Texaco</li>
-							<li>General Electric</li>
-							<li>Chrysler</li>
-							<li>Chevron || Gulf Oil (Tie)</li>
-							<li>AT&T</li>
-							<li>Amoco</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+					<section>
+						<div id="decade-1950s" class="spacer"></div>
+						<div class='step first' data-index='0'>
+			                <h2> Top Logos of the 1950s</h2>
+			                <ol>
+								<li>General Motors</li>
+								<li>Esso (Standard Oil of New Jersey)</li>
+								<li>General Electric</li>
+								<li>Chrysler</li>
+								<li>Mobil</li>
+								<li>Gulf Oil</li>
+								<li>AT&T</li>
+								<li>Texaco</li>
+								<li>Amoco</li>
+								<li>CBS</li>
+							</ol>
+						</div>
+						<div id="decade-1950s" class='step' data-index='0'>
+							<img src="img/1950sPalette.svg" alt="Color blocks showing the colors used in the top ten 1950s logos.">
+							<p>11 colors</p>
+							<p>7 sans-serif typefaces</p>
+							<p>1 serif typeface</p>
+							<p>1 script typeface</p>
+							<p>0 gradients</p>
+							<p>1 3D effect</p>
+						</div>
 
-		            <div id="decade-1980s" class='step' data-index='3'>
-		                <h2> Logos of the 1980s</h2>
-						<ol>
-							<li>Exxon</li>
-							<li>General Motors</li>
-							<li>Mobil</li>
-							<li>Ford</li>
-							<li>Texaco</li>
-							<li>IBM</li>
-							<li>Chevron</li>
-							<li>General Electric</li>
-							<li>Amoco</li>
-							<li>Shell</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+						<div id="decade-1950s" class='step' data-index='0'>
+							<p class="para2">During WWII, Americans had put all efforts towards the war, bringing American production and manufacturing to a halt. In the 1950s, Americans were flush with cash and companies expanded production, bringing about an unprecedented era of American consumerism. The rapid development of technology made it harder for companies to beat their competition with high-quality products alone, so this decade forced companies to distinguish themselves by creating a brand identity and reputation. With this rise in technology, television was also becoming a staple in the American household, and companies saw this as an opportunity for advertising.</p>
+							<p>The logos of the 1950s represent Modernism with sans-serif type, primary colors, and simple, geometric forms or symbols. Design was simplified through the integration of text and image into overlapping forms. American idealism in this decade led to experimentation in logo design, as designers sought to create logos that could work in various types of media and that could be recognized more quickly as the world picked up its pace after the war. Despite the rise in television, print media was still the primary source of information for Americans, so many logos remained without gradients, shadows, or intricate details that would be hard to print.</p>
+			            </div>
 
-		            <div id="decade-1990s" class='step' data-index='4'>
-		                <h2> Logos of the 1990s</h2>
-						<ol>
-							<li>General Motors</li>
-							<li>Ford</li>
-							<li>Exxon</li>
-							<li>IBM</li>
-							<li>General Electric</li>
-							<li>Mobil</li>
-							<li>Texaco</li>
-							<li>Chevron || Procter & Gamble (Tie)</li>
-							<li>Hewlett-Packard</li>
-							<li>PepsiCo</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+			            <div class='step' data-index='1' style="background-color: #045085; min-height: 85vh;"> </div>
 
-		            <div id="decade-2000s" class='step' data-index='5'>
-		                <h2> Logos of the 2000s</h2>
-						<ol>
-							<li>Walmart</li>
-							<li>ExxonMobil</li>
-							<li>General Motors</li>
-							<li>Ford</li>
-							<li>General Electric</li>
-							<li>Citigroup</li>
-							<li>IBM</li>
-							<li>Hewlett-Packard</li>
-							<li>Bank of America</li>
-							<li>Home Depot</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+			            <div id="decade-1960s" class="spacer"></div>
+			            <div class='step' data-index='1'>
+			                <h2> Top Logos of the 1960s</h2>
+			                <ol>
+								<li>General Motors</li>
+								<li>Esso (Standard Oil of New Jersey)</li>
+								<li>Ford</li>
+								<li>General Electric</li>
+								<li>Mobil</li>
+								<li>Chrysler</li>
+								<li>Texaco</li>
+								<li>Gulf Oil</li>
+								<li>AT&T</li>
+								<li>IBM</li>
+							</ol>
+						</div>
+						<div id="decade-1960s" class='step' data-index='1'>
+			                <img src="img/1960sPalette.svg" alt="Color blocks showing the colors used in the top ten 1960s logos.">
+			                <p>14 colors</p>
+			                <p>7 sans-serif typefaces</p>
+			                <p>1 serif typeface</p>
+			                <p>2 script typefaces</p>
+			                <p>0 gradients</p>
+			            </div>
+			            <div id="decade-1960s" class='step' data-index='1'>
+							<p>In the 1960s, branding became a necessity for companies. Many of the logos built upon the simplicity of 1950s logos, further reducing ornamentation and sticking to basic sans-serif typefaces and geometric shapes. The further integration of television in American society and the development of direct marketing led to companies bringing more color into their logo designs to appeal to consumers.</p>
+			            </div>
 
-		            <div id="decade-2010s" class='step' data-index='6'>
-		                <h2> Logos of the 2010s</h2>
-						<ol>
-							<li>Walmart</li>
-							<li>ExxonMobil</li>
-							<li>Chevron</li>
-							<li>General Motors</li>
-							<li>Ford</li>
-							<li>AT&T</li>
-							<li>General Electric</li>
-							<li>CVS Pharmacy</li>
-							<li>Apple </li>
-							<li>Verizon</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+			            <div class='step' data-index='2' style="background-color: #045085; min-height: 85vh;"> </div>
 
-		            <div id="decade-2020s" class='step' data-index='7'>
-		                <h2> Logos of the 2020s</h2>
-						<ol>
-							<li>Walmart</li>
-							<li>Apple</li>
-							<li>CVS Pharmacy</li>
-							<li>ExxonMobil</li>
-							<li>Google</li>
-							<li>AT&T</li>
-							<li>Costco</li>
-							<li>Cigna</li>
-							<li>Microsoft</li>
-							<li>Walgreens</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+			            <div id="decade-1970s" class="spacer"></div>
+						<div class='step' data-index='2'>
+			                <h2> Top Logos of the 1970s</h2>
+			                <ol>
+								<li>General Motors</li>
+								<li>Exxon</li>
+								<li>Ford</li>
+								<li>Mobil</li>
+								<li>Texaco</li>
+								<li>General Electric</li>
+								<li>Chrysler</li>
+								<li>Chevron || Gulf Oil (Tie)</li>
+								<li>AT&T</li>
+								<li>Amoco</li>
+							</ol>
+						</div>
+						<div id="decade-1970s" class='step' data-index='2'>
+			                <img src="img/1970sPalette.svg" alt="Color blocks showing the colors used in the top ten 1970s logos.">
+							<p>18 colors</p>
+							<p>9 sans-serif typefaces</p>
+							<p>0 serif typefaces</p>
+							<p>2 script typefaces</p>
+							<p>1 gradient</p>
+							<p>1 metallic effect</p>
+						</div>
+						<div id="decade-1970s" class='step' data-index='2'>
+							<p>In the 1970s, the use of computers skyrocketed, bringing about the development of computer-generated imagery (CGI) and computer-aided drawing (CAD). These new technologies allowed companies to start using more computer effects such as gradients and metallic effects in their logo designs, as can be seen in the Ford logo used in this decade.</p>
+			            </div>
 
-		            <div id="decade-AllTime" class='step' data-index='8'>
-		                <h2> Best Logos of All Time</h2>
-						<ol>
-							<li>ExxonMobil</li>
-							<li>General Motors</li>
-							<li>General Electric</li>
-							<li>Ford</li>
-							<li>IBM</li>
-							<li>Procter & Gamble</li>
-							<li>ConocoPhillips</li>
-							<li>Caterpillar</li>
-							<li>AT&T</li>
-							<li>Coca-Cola</li>
-						</ol>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
-		            </div>
+			            <div class='step' data-index='3' style="background-color: #045085; min-height: 85vh;"> </div>
 
-				</div> <!-- END SCROLLY-->
+			            <div id="decade-1980s" class="spacer"></div>
+			            <div class='step' data-index='3'>
+			                <h2> Top Logos of the 1980s</h2>
+			                <ol>
+								<li>Exxon</li>
+								<li>General Motors</li>
+								<li>Mobil</li>
+								<li>Ford</li>
+								<li>Texaco</li>
+								<li>IBM</li>
+								<li>Chevron</li>
+								<li>General Electric</li>
+								<li>Amoco</li>
+								<li>Shell</li>
+							</ol>
+						</div>
+						<div id="decade-1980s" class='step' data-index='3'>
+			                <img src="img/1980sPalette.svg" alt="Color blocks showing the colors used in the top ten 1980s logos.">
+			                <p>18 colors</p>
+			                <p>6 sans-serif typefaces</p>
+			                <p>1 serif typeface</p>
+			                <p>2 script typefaces</p>
+			                <p>1 gradient</p>
+			                <p>1 metallic effect</p>
+						</div>
+						<div id="decade-1980s" class='step' data-index='3'>
+							<p>The 1980s brought about the rise of the Internet. Companies began creating websites, which served as another form of media for advertising. The Postmodern era re-established designers' interest in ornamentation, symbolism, visual wit, and vivid colors.</p>
+			            </div>
 
-			</div> <!-- END SCROLLYTELLING -->
-			
+			            <div class='step' data-index='4' style="background-color: #045085; min-height: 85vh;"> </div>
+
+			            <div id="decade-1990s" class="spacer"></div>
+			            <div class='step' data-index='4'>
+			                <h2> Top Logos of the 1990s</h2>
+			                <ol>
+								<li>General Motors</li>
+								<li>Ford</li>
+								<li>Exxon</li>
+								<li>IBM</li>
+								<li>General Electric</li>
+								<li>Mobil</li>
+								<li>Texaco</li>
+								<li>Chevron || Procter & Gamble (Tie)</li>
+								<li>Hewlett-Packard</li>
+								<li>PepsiCo</li>
+							</ol>
+						</div>
+						<div id="decade-1990s" class='step' data-index='4'>
+			                <img src="img/1990sPalette.svg" alt="Color blocks showing the colors used in the top ten 1990s logos.">
+							<p>18 colors</p>
+							<p>7 sans-serif typefaces</p>
+							<p>2 serif typefaces</p>
+							<p>2 script typefaces</p>
+							<p>2 gradients</p>
+							<p>1 metallic effect</p>
+						</div>
+						<div id="decade-1990s" class='step' data-index='4'>
+							<p>In the 1990s, personal computers became widely available. The first version of Adobe Photoshop was released in 1990, giving graphic designers a revolutionary tool for creating logos. This was the real start of the digital age of design, allowing designers to truly create whatever they wanted.</p>
+			            </div>
+
+			            <div class='step' data-index='5' style="background-color: #045085; min-height: 85vh;"> </div>
+
+			            <div id="decade-2000s" class="spacer"></div>
+			            <div class='step' data-index='5'>
+			                <h2> Top Logos of the 2000s</h2>
+			                <ol>
+								<li>Walmart</li>
+								<li>ExxonMobil</li>
+								<li>General Motors</li>
+								<li>Ford</li>
+								<li>General Electric</li>
+								<li>Citigroup</li>
+								<li>IBM</li>
+								<li>Hewlett-Packard</li>
+								<li>Bank of America</li>
+								<li>Home Depot</li>
+							</ol>
+						</div>
+						<div id="decade-2000s" class='step' data-index='5'>
+			                <img src="img/2000sPalette.svg" alt="Color blocks showing the colors used in the top ten 2000s logos.">
+							<p>15 colors</p>
+							<p>6 sans-serif typefaces</p>
+							<p>2 serif typefaces</p>
+							<p>2 script typefaces</p>
+							<p>1 gradient</p>
+						</div>
+						<div id="decade-2000s" class='step' data-index='5'>
+							<p>The 2000s brought about the introduction of the first IPhone in 2007 and the App Store in 2008. Logos now needed to fit in a 64 by 64 pixel square to be accessible to smartphone users. As the world became more comfortable with digital technologies, it was no longer necessary to mimic a three-dimensional world in a two-dimensional space. This began the era of flat design that has continued into the present. The 2000s also saw rounded letters and brighter colors.</p>
+			            </div>
+
+			            <div class='step' data-index='6' style="background-color: #045085; min-height: 85vh;"> </div>
+
+			            <div id="decade-2010s" class="spacer"></div>
+			            <div class='step' data-index='6'>
+			                <h2> Top Logos of the 2010s</h2>
+			                <ol>
+								<li>Walmart</li>
+								<li>ExxonMobil</li>
+								<li>Chevron</li>
+								<li>General Motors</li>
+								<li>Ford</li>
+								<li>AT&T</li>
+								<li>General Electric</li>
+								<li>CVS Pharmacy</li>
+								<li>Apple </li>
+								<li>Verizon</li>
+							</ol>
+						</div>
+						<div id="decade-2010s" class='step' data-index='6'>
+			                <img src="img/2010sPalette.svg" alt="Color blocks showing the colors used in the top ten 2010s logos.">
+							<p>13 colors</p>
+							<p>7 sans-serif typefaces</p>
+							<p>0 serif typefaces</p>
+							<p>2 script typefaces</p>
+							<p>1 gradient</p>
+						</div>
+						<div id="decade-2010s" class='step' data-index='6'>
+							<p>In the 2010s, social media brought about a new way for companies to mass market their products. Logos of this decade displayed a minimalist design using simple elements, typography, and flat colors.</p>
+			            </div>
+
+			            <div class='step' data-index='7' style="background-color: #045085; min-height: 85vh;"> </div>
+
+			            <div id="decade-2020s" class="spacer"></div>
+			            <div class='step' data-index='7'>
+			                <h2> Top Logos of the 2020s</h2>
+			                <ol>
+								<li>Walmart</li>
+								<li>Apple</li>
+								<li>CVS Pharmacy</li>
+								<li>ExxonMobil</li>
+								<li>Google</li>
+								<li>AT&T</li>
+								<li>Costco</li>
+								<li>Cigna</li>
+								<li>Microsoft</li>
+								<li>Walgreens</li>
+							</ol>
+						</div>
+						<div id="decade-2020s" class='step' data-index='7'>
+			                <img src="img/2020sPalette.svg" alt="Color blocks showing the colors used in the top ten 2020s logos.">
+							<p>21 colors</p>
+							<p>8 sans-serif typefaces</p>
+							<p>0 serif typefaces</p>
+							<p>1 script typefaces</p>
+							<p>0 gradients</p>
+						</div>
+						<div id="decade-2020s" class='step' data-index='7'>
+							<p>In the present day, there are more brands than ever before and branding has become more important than the product itself in distinguishing a company from its competitors. With Americans being surrounded by a variety of physical and digital media, logos have to be incredibly flexible and adaptable, while getting across a message in a short period of time.</p>
+			            </div>
+
+			            <!-- <div class='step' data-index='8' style="background-color: #045085; min-height: 85vh;"> </div>
+
+			            <div id="decade-AllTime" class='step' data-index='8'>
+			                <h2> Top Logos of All Time</h2>
+			                <ol>
+								<li>ExxonMobil</li>
+								<li>General Motors</li>
+								<li>General Electric</li>
+								<li>Ford</li>
+								<li>IBM</li>
+								<li>Procter & Gamble</li>
+								<li>ConocoPhillips</li>
+								<li>Caterpillar</li>
+								<li>AT&T</li>
+								<li>Coca-Cola</li>
+							</ol>
+						</div>
+						<div id="decade-AllTime" class='step' data-index='8'>
+			                <img src="img/AllTimePalette.svg" alt="Color blocks showing the colors used in the top ten all time logos.">
+							<p>13 colors</p>
+							<p>5 sans-serif typefaces</p>
+							<p>2 serif typefaces</p>
+							<p>3 script typefaces</p>
+							<p>2 gradients</p>
+						</div>
+						<div id="decade-AllTime" class='step' data-index='8'>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas tellus rutrum tellus pellentesque eu tincidunt. Purus in mollis nunc sed id semper risus. Ornare arcu odio ut sem nulla. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Felis eget nunc lobortis mattis aliquam faucibus. Bibendum est ultricies integer quis auctor elit sed. Lorem mollis aliquam ut porttitor leo. Pretium lectus quam id leo in. Id neque aliquam vestibulum morbi blandit cursus.</p>
+			            </div> -->
+					</section> <!-- END DATA STORY-->
+				</div> <!--END SCROLLY-->
+			</section> <!-- END SCROLLYTELLING -->
+
+			<div class="conclusion">
+				<p class="para2">After looking at eight decades of the top corporate logos, what can we conclude? Is there anything that stood the test of time? Almost every decade was filled with sans-serif typefaces, basic geometric shapes, and minimal effects. The colors red and blue were the most popular in every decade, and no, this is not because of their patriotism. Rather, red is the most visible color to the human eye and blue is representative of trust, loyalty, confidence, and intelligence while also having a calming effect. More so than colors, typefaces, and shapes, it seems that the technologies and media forms at a given time are the largest drivers of logo design. The logos that stood the test of time were flexible enough to be printed or displayed digitally and could look good at any scale. In a fast pace world, people don't have time to examine the details, so simplicity is key.</p>
+				<p class="para2">This leaves us with our formula for the perfect logo:</p>
+				<p>Sans-Serif Typeface + Red & Blue + Flexibility + Scalability + Simplicity</p>
+			</div>
+
+			<footer>
+				<p>Data story written and created by Kyra Moran.</p>
+			</footer>
 		</main>
 	</body>
 	<script src="https://unpkg.com/d3@5.4.0/dist/d3.min.js"></script>

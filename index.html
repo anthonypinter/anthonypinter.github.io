@@ -33,3 +33,100 @@ section_id: home
       </div>
     </div>
   </div>
+
+  <div id="newsarchive" class="card">
+    <div id="news">
+      <div id="news-title">
+        <h2>news archive.</h2>
+      </div>
+      <ul>
+        {% for item in site.data.news limit: 8 %}
+        <li>
+          <span class="news-date">{{item.date | date: "%d %B %Y"}}</span>
+          <span class="separator">|</span>
+          <span><p>{{item.headline}}</p></span>
+        </li>
+        {% endfor %}
+      </ul>
+      <div id="news-more">
+        <a href="./">back.</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="card">
+    <h2>about me.</h2>
+    <div id="fullBio">
+      <p>I come from a family of educators, and was afforded the opportunity to see different parts of the country while <a href="https://altoona.psu.edu/person/brad-pinter-phd">my father</a> completed his PhD, post-doc, and got his first academic position. Because of my background, I knew early on I wanted to pursue a career in research and teaching. After a brief failed stint as an engineering student, I completed my B.S. and M.S. in Information Sciences and Technology at the Pennsylvania State University in 2015 and 2017, respectively. My M.S. was overseen by <a href="https://faculty.ist.psu.edu/lyarger/">Lynette (Kvasny) Yarger</a>. While at Penn State, I competed in track and field, specializing in the multi-event disciplines.</p>
+      <p>Since moving to Colorado, I've leaned into the lifestyle you would expect a Coloradan have. I spend most of my free time riding or thinking about bikes and skis (depending on the season). I ride all disciplines on bikes year round, but train specifically for long XC-style mountain bike races like the <a href="https://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/">Leadville 100 MTB </a>. During the winter, I've confined myself to on-piste or sidecountry skiing, but I expect that to change within the next year or so. I have also continued my involvement in track and field as the high jump and multi-events coach at Boulder High School and a USATF Level 1 Coach.</p>
+    </div>
+    <h2>about this site.</h2>
+    <div id="fullBio">
+      <p>For a long time, I had a static website inspired primarily by <a href="ttps://github.com/weightshift/The-Personal-Page">The Personal Page</a> by Naz Hamid at <a href="https://weightshift.com">Weightshift</a>. However, as I enter the last year of my doctoral work, I felt it was time to do something a bit more substantial. I've always been a bit of a minimalist when it comes to design. I was taken with <a href="http://mornaaman.com">Mor Naaman's personal website</a>, but wanted the Jekyll functionality I had come to enjoy from working on <a href="https://cmci.colorado.edu/idlab/">the Identity Lab's site</a>. So I combined the two (with substantial design tweaks), and here we are. You can find the repo for this particular design on <a href="https://github.com/anthonypinter/anthonypinter.github.io">my Github</a>.</p>
+    </div>
+  </div>
+
+  <div id="publications" class="card">
+    <h2>recent publications.</h2>
+    <ul>
+      {% for item in site.data.publications limit: 4 %}
+      <li>
+        <div id="p-info">
+          <span id="p-author">{{item.authors}}. </span><span id="p-author">{{item.year}}.</span>
+          <span id="p-title">{{item.title}}.</span>
+          <span id="p-source"><em>{{item.venue}}.</em></span><br>
+          {% if item.pdf %}
+          <span id="p-source"><a href="./assets/papers/{{item.pdf}}">PDF</a></span>
+          {% endif %}
+          {% if item.blog %}
+            <span id="p-source"><a href="{{item.blog}}">Blog</a>
+          {% endif %}
+          <p>
+        </div>
+      </li>
+      {% endfor %}
+      </ul>
+      <div id="news">
+        <div id="news-more">
+          <a href="https://scholar.google.com/citations?user=Vq_3XusAAAAJ&hl=en&oi=ao">more via google scholar</a><br>
+          <a href="/assets/pintercv.pdf">or via my cv.</a>
+        </div>
+      </div>
+    </div>
+
+  <div id="projects" class="card">
+    <h2>recent projects.</h2>
+    <ul>
+      {% for item in site.data.projects limit: 4 %}
+      <li class="projects-list">
+        <div id="p-info">
+          <span id="p-title"><b>{{item.title}}</b></span><br>
+          <span id="p-author">{{item.description}} </span>
+          <span id="p-author"><a href='{{item.link | prepend: site.baseurl}}'>Read more about this project...</a></span><br>
+          <p></p>
+        </div>
+      </li>
+      {% endfor %}
+      </ul>
+
+  </div>
+
+  <div id="cv" class="card">
+    <h2>curriculum vitae</h2>
+    <div id="shortBio">
+      <p><a href="/assets/pintercv.pdf" target="_blank" rel="noopener noreferrer">Click here to open PDF in a new window.</a></p>
+    </div>
+  
+    <iframe src="/assets/pintercv.pdf" width="100%" height="500px">
+      </iframe>
+  </div>
+
+  <div id="contact" class="card">
+    <h2>contact me.</h2>
+    <div id="shortBio">
+      <p>Generally the best way to contact me is via email: <a href="mailto:anthony.pinter@colorado.edu">anthony.pinter@colorado.edu.</a></p>
+      <p>I maintain a <a href="https://twitter.com/anthonypinter?lang=en">Twitter</a>, but I only use it during conferences.</p>
+      <p>I can be found on <a href="https://github.com/anthonypinter">Github</a>.
+      <p>I'm also on <a href="https://www.instagram.com/anthonypinter/">Instagram</a>, if you'd be interested in seeing what I do in my personal life.
+    </div>
+  </div>
