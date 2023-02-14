@@ -49,6 +49,11 @@ ul {
     width:210px;
 }
 
+.projectPhoto {
+    max-width: 100%;
+    height: auto;
+}
+
 @media screen and (max-width:1000px) {
     .left {
         position:relative;
