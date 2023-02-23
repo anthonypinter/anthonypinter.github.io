@@ -9,6 +9,9 @@
  #- headline  : I am on the job market for jobs starting SP/FA22. I am focusing my search on teaching focused positions.
  # date      : 2021-09-01 12:00:00
 
+ - headline  : I created Valentine's Day cards using generative AI. <a href="/projects/cards.html">See more here.</a>
+   date      : 2023-02-14 12:00:00
+
  - headline  : I'm presenting at CSCW 2022 this week, on work I did with Jed Brubaker. <a href="./assets/papers/pinter-cscw-2022.pdf">Link here.</a>
    date      : 2022-11-14 12:00:00
 
