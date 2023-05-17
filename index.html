@@ -22,9 +22,8 @@ section_id: home
       <ul>
         {% for item in site.data.news limit: 3 %}
         <li>
-          <span class="news-date">{{item.date | date: "%d %B %Y"}}</span>
-          <span class="separator">|</span>
-          <span><p>{{item.headline}}</p></span>
+          <div><p style="padding-top:0; margin-top:0; text-transform:uppercase; color:#1e1e1e; letter-spacing:.6px;font-weight:500; ">{{item.date | date: "%d %B %Y"}}</p></div>
+          <p>{{item.headline}}</p>
         </li>
         {% endfor %}
       </ul>
@@ -42,9 +41,8 @@ section_id: home
       <ul>
         {% for item in site.data.news limit: 8 %}
         <li>
-          <span class="news-date">{{item.date | date: "%d %B %Y"}}</span>
-          <span class="separator">|</span>
-          <span><p>{{item.headline}}</p></span>
+          <p class="news-date">{{item.date | date: "%d %B %Y"}}</p>
+          <p>{{item.headline}}</p>
         </li>
         {% endfor %}
       </ul>

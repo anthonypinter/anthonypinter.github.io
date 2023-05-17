@@ -8,11 +8,10 @@ layout: default
       <h2>news archive.</h2>
     </div>
     <ul>
-      {% for item in site.data.news limit: 8 %}
+      {% for item in site.data.news limit: 10 %}
       <li>
-        <span class="news-date">{{item.date | date: "%d %B %Y"}}</span>
-        <span class="separator">|</span>
-        <span><p>{{item.headline}}</p></span>
+        <div><p style="padding-top:0; margin-top:0; text-transform:uppercase; color:#1e1e1e; letter-spacing:.6px;font-weight:500; ">{{item.date | date: "%d %B %Y"}}</p></div>
+        <p>{{item.headline}}</p>
       </li>
       {% endfor %}
     </ul>
