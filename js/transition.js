@@ -2,6 +2,10 @@ const homeBtn = document.getElementById('navi-home');
 homeBtn.addEventListener('click', switchPage, false);
 homeBtn.myParam = 'home';
 
+const backBtn = document.getElementById('back');
+backBtn.addEventListener('click', switchPage, false);
+backBtn.myParam = 'home';
+
 const aboutBtn = document.getElementById('navi-about');
 aboutBtn.addEventListener('click', switchPage, false);
 aboutBtn.myParam = 'about';
@@ -22,12 +26,17 @@ const contactBtn = document.getElementById('navi-contact');
 contactBtn.addEventListener('click', switchPage, false);
 contactBtn.myParam = 'contact';
 
+const newsArchiveBtn = document.getElementById('news-more');
+newsArchiveBtn.addEventListener('click', switchPage, false);
+newsArchiveBtn.myParam = 'archive';
+
 const homeDiv = document.getElementById('home');
 const aboutDiv = document.getElementById('about');
 const pubDiv = document.getElementById('publications');
 const projectsDiv = document.getElementById('projects');
 const cvDiv = document.getElementById('cv');
 const contactDiv = document.getElementById('contact');
+const newsArchiveDiv = document.getElementById('newsarchive')
 
 function switchPage (page) {
     if (page.currentTarget.myParam == 'home') {
@@ -39,6 +48,7 @@ function switchPage (page) {
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
         contactDiv.style.display = 'none';
+        newsArchiveDiv.style.display = 'none';
         // this rough logic works -- 
         // need to add a smooth transition
         
@@ -52,6 +62,7 @@ function switchPage (page) {
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
         contactDiv.style.display = 'none';
+        newsArchiveDiv.style.display = 'none';
     }
    
     if (page.currentTarget.myParam == 'publication') {
@@ -62,6 +73,7 @@ function switchPage (page) {
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
         contactDiv.style.display = 'none';
+        newsArchiveDiv.style.display = 'none';
     }
 
     if (page.currentTarget.myParam == 'projects') {
@@ -72,6 +84,7 @@ function switchPage (page) {
         projectsDiv.style.display = 'block';
         cvDiv.style.display = 'none';
         contactDiv.style.display = 'none';
+        newsArchiveDiv.style.display = 'none';
     }
 
     if (page.currentTarget.myParam == 'cv') {
@@ -82,6 +95,7 @@ function switchPage (page) {
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'block';
         contactDiv.style.display = 'none';
+        newsArchiveDiv.style.display = 'none';
     }
 
     if (page.currentTarget.myParam == 'contact') {
@@ -92,5 +106,16 @@ function switchPage (page) {
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
         contactDiv.style.display = 'block';
+        newsArchiveDiv.style.display = 'none';
+    }
+    if (page.currentTarget.myParam == 'archive') {
+        console.log('contact');
+        aboutDiv.style.display = 'none';
+        homeDiv.style.display = 'none';
+        pubDiv.style.display = 'none';
+        projectsDiv.style.display = 'none';
+        cvDiv.style.display = 'none';
+        contactDiv.style.display = 'none';
+        newsArchiveDiv.style.display = 'block';
     }
 }

@@ -28,7 +28,7 @@ section_id: home
         {% endfor %}
       </ul>
       <div id="news-more">
-        <a href="./newsarchive">archive.</a>
+        <a id="news-more">archive.</a>
       </div>
     </div>
   </div>
@@ -41,13 +41,15 @@ section_id: home
       <ul>
         {% for item in site.data.news limit: 8 %}
         <li>
-          <p class="news-date">{{item.date | date: "%d %B %Y"}}</p>
+          <div><p class="news-date"  style="padding-top:0; margin-top:0; text-transform:uppercase; color:#1e1e1e; letter-spacing:.6px;font-weight:500; ">{{item.date | date: "%d %B %Y"}}</p></div>
           <p>{{item.headline}}</p>
+          
         </li>
+        <br>
         {% endfor %}
       </ul>
       <div id="news-more">
-        <a href="./">back.</a>
+        <a id="back">back.</a>
       </div>
     </div>
   </div>
