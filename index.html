@@ -8,8 +8,8 @@ section_id: home
     <h2>hi.</h2>
     <div id="shortBio">
       <p>I am a <a href="https://www.colorado.edu/atlas/anthony-pinter"> Teaching Assistant Professor in the ATLAS Institute</a> at the University of Colorado Boulder. I completed my PhD in Information Science, also at CU Boulder, working with <a href="https://www.jedbrubaker.com">Jed Brubaker</a> and <a href="https://cmci.colorado.edu/idlab/">the Identity Lab</a>. My research interests focus on understanding the experiences people have during life transitions and how those experiences are represented in sociotechnical systems. I am particularly interested in how people make decisions about the data that are left behind in the wake of a romantic relationship ending, and how those decisions contribute to the formation of post-break-up identities.</p>
-      <p>I am concurrently <a href="https://ist.psu.edu/directory/atp136">an Adjunct Part-Time Faculty member</a> in Penn State's College of Information Sciences and Technology, where I have taught through Penn State's World Campus program since 2016.</p>
-      <p>For more information about my past and present professional activities, see <a href="/assets/pintercv.pdf">my curriculum vitae</a>. For more about me, have a look at the <a href="/#about">about page</a>.</p>
+      <p>I am concurrently <a href="https://ist.psu.edu/directory/atp136">an Adjunct Part-Time Faculty member</a> in Penn State's College of Information Sciences and Technology, where I have taught through Penn State's World Campus program since 2016. I am also involved in the <a href="https://www.i3-inclusion.org">iSchool Inclusion Institute (i3)</a>, most recently as a Research Advisor for a team of 2022 i3 Scholars.</p>
+
     </div>
 
     <!-- <i class="fa fa-info-circle"></i>-->
@@ -20,7 +20,7 @@ section_id: home
         <h2>most recently.</h2>
       </div>
       <ul>
-        {% for item in site.data.news limit: 3 %}
+        {% for item in site.data.news limit: 4 %}
         <li>
           <div><p style="padding-top:0; margin-top:0; text-transform:uppercase; color:#1e1e1e; letter-spacing:.6px;font-weight:500; ">{{item.date | date: "%d %B %Y"}}</p></div>
           <p>{{item.headline}}</p>
@@ -39,7 +39,7 @@ section_id: home
         <h2>news archive.</h2>
       </div>
       <ul>
-        {% for item in site.data.news limit: 8 %}
+        {% for item in site.data.news %}
         <li>
           <div><p class="news-date"  style="padding-top:0; margin-top:0; text-transform:uppercase; color:#1e1e1e; letter-spacing:.6px;font-weight:500; ">{{item.date | date: "%d %B %Y"}}</p></div>
           <p>{{item.headline}}</p>
@@ -57,8 +57,8 @@ section_id: home
   <div id="about" class="card">
     <h2>about me.</h2>
     <div id="fullBio">
-      <p>I come from a family of educators, and was afforded the opportunity to see different parts of the country while <a href="https://altoona.psu.edu/person/brad-pinter-phd">my father</a> completed his PhD, post-doc, and got his first academic position. Because of my background, I knew early on I wanted to pursue a career in research and teaching. After a brief failed stint as an engineering student, I completed my B.S. and M.S. in Information Sciences and Technology at the Pennsylvania State University in 2015 and 2017, respectively. My M.S. was overseen by <a href="https://faculty.ist.psu.edu/lyarger/">Lynette (Kvasny) Yarger</a>. While at Penn State, I competed in track and field, specializing in the multi-event disciplines.</p>
-      <p>Since moving to Colorado, I've leaned into the lifestyle you would expect a Coloradan have. I spend most of my free time riding or thinking about bikes and skis (depending on the season). I ride all disciplines on bikes year round, but train specifically for long XC-style mountain bike races like the <a href="https://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/">Leadville 100 MTB </a>. During the winter, I've confined myself to on-piste or sidecountry skiing, but I expect that to change within the next year or so. I have also continued my involvement in track and field as the high jump and multi-events coach at Boulder High School and a USATF Level 1 Coach.</p>
+      <p>I come from a family of educators, and was afforded the opportunity to see different parts of the country while <a href="https://altoona.psu.edu/person/brad-pinter-phd">my father</a> completed his PhD, post-doc, and got his first academic position. Because of my background, I knew early on I wanted to pursue a career in research and teaching. After a brief failed stint as an engineering student, I completed my B.S. and M.S. in Information Sciences and Technology at the Pennsylvania State University in 2015 and 2017, respectively. My M.S. was overseen by <a href="https://faculty.ist.psu.edu/lyarger/">Lynette (Kvasny) Yarger</a>. While at Penn State, I competed in track and field, specializing in the multi-event disciplines, and was also involved in graduate student governance and Movin' On, Penn State's annual student-run music festival.</p>
+      <p>Since moving to Colorado, I've leaned into the lifestyle you would expect a Coloradan have. I spend most of my free time riding or thinking about bikes and skis (depending on the season). I ride all disciplines on bikes year round, but train specifically for long XC-style mountain bike races like the <a href="https://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/">Leadville 100 MTB </a>. I have also continued my involvement in track and field as the jumps and multi-events coach at Boulder High School, and I hold my USATF Level 2 Coaching Certification in the jumps.</p>
     </div>
     <h2>about this site.</h2>
     <div id="fullBio">
