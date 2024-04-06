@@ -1,5 +1,15 @@
+@font-face {
+    font-family: 'made_soulmaze_regular';
+    src: url('https://cdn.glitch.global/2a683e6c-623f-41fd-a65b-79eac777ef44/made_soulmaze-webfont.woff') format('woff'),
+    url('https://cdn.glitch.global/2a683e6c-623f-41fd-a65b-79eac777ef44/made_soulmaze-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing:border-box;
+
+    --headerfont: "made_soulmaze_regular", sans-serif;
 }
 
 html {
@@ -42,6 +52,10 @@ ul {
     padding:0;
     margin:0;
     list-style-type:none;
+}
+
+.title-name {
+    font-family: var(--headerfont);
 }
 
 .left {
