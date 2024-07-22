@@ -1,0 +1,9 @@
+//In order to use the font BookmanJF from Adobe Fonts, use the following fontkit CSS: 
+
+<link rel="stylesheet" href="https://use.typekit.net/kax8djx.css">
+
+//It's a typekit sheet that I made for Whaaat2024 in my account, but if you call that in your <head> tag, you should be able to call//
+
+font-family: bookman-jf-pro, serif; font-weight: 400;font-style: normal; (edited) 
+
+//or use italic, there are just two variants in there
