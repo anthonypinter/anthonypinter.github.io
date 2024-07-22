@@ -5,131 +5,303 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whaaat!? Festival 2024</title>
     <link rel="stylesheet" href="https://use.typekit.net/kax8djx.css">
+    <link rel="stylesheet" href="whaaat.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: black;
-            color: white;
+   
+
+        @media screen and (max-width: 800px) {
+            .dial1 {
+            width: 45px;
+            height: 45px;
+
+            left: 80%;
+            top: 10%;
         }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            position: relative;
+        .dial2 {
+            width: 45px;
+            height: 45px;
+
+            left: 80%;
+            top: 24%;
         }
 
-        .frame {
-            width: 100%;
-            height: auto;
+        .btn1 {
+            width: 18px;
+            height: 18px;
+
+            left: 77%;
+            top: 38%;
         }
 
-        .frame img {
-            width: 100%;
-            height: auto;
-            display: block;
-            z-index: 2;
+        .btn2 {
+            width: 18px;
+            height: 18px;
+
+            left: 81%;
+            top: 38%;
+        }
+
+        .btn3 {
+            width: 18px;
+            height: 18px;
+
+            left: 85%;
+            top: 38%;
+        }
+        }
+
+        @media screen and (max-width: 700px) {
+            .dial1 {
+            width: 45px;
+            height: 45px;
+
+            left: 79%;
+            top: 9%;
+        }
+
+        .dial2 {
+            width: 45px;
+            height: 45px;
+
+            left: 79%;
+            top: 23%;
+        }
+
+        .btn1 {
+            width: 18px;
+            height: 18px;
+
+            left: 77%;
+            top: 37%;
+        }
+
+        .btn2 {
+            width: 18px;
+            height: 18px;
+
+            left: 81%;
+            top: 37%;
+        }
+
+        .btn3 {
+            width: 18px;
+            height: 18px;
+
+            left: 85%;
+            top: 37%;
+        }
+        }
+
+        @media screen and (max-width: 600px) {
+            .dial1 {
+            width: 40px;
+            height: 40px;
+
+            left: 78%;
+            top: 9%;
+        }
+
+        .dial2 {
+            width: 40px;
+            height: 40px;
+
+            left: 78%;
+            top: 22%;
+        }
+
+        .btn1 {
+            width: 15px;
+            height: 15px;
+
+            left: 77%;
+            top: 34%;
+        }
+
+        .btn2 {
+            width: 15px;
+            height: 15px;
+
+            left: 81%;
+            top: 34%;
+        }
+
+        .btn3 {
+            width: 15px;
+            height: 15px;
+
+            left: 85%;
+            top: 34%;
+        }
+        }
+
+        @media screen and (max-width: 515px) {
+            .notification-container {
+            font-size: 200%;
+        }
+            
+            .dial1 {
+            width: 30px;
+            height: 30px;
+
+            left: 79%;
+            top: 9%;
+        }
+
+        .dial2 {
+            width: 30px;
+            height: 30px;
+
+            left: 79%;
+            top: 22%;
+        }
+
+        .btn1 {
+            width: 12px;
+            height: 12px;
+
+            left: 77%;
+            top: 34%;
+        }
+
+        .btn2 {
+            width: 12px;
+            height: 12px;
+
+            left: 81%;
+            top: 34%;
+        }
+
+        .btn3 {
+            width: 12px;
+            height: 12px;
+
+            left: 85%;
+            top: 34%;
         }
 
         .video-container {
             position: absolute;
-            top: 9%;
-            left: 14.5%;
+            top: 4%;
+            left: 15%;
             width: 100%;
             height: 100%;
             overflow: hidden;
             z-index: -2;
         }
-
-        .video-container video {
-            width: 72.5%;
-            height: auto;
-            object-fit: cover;
         }
 
-        .notification-container {
-            font-family: bookman-jf-pro, serif; 
-            font-weight: 400;
-            font-style: italic;
-            font-size: 250%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 3vh;
+        @media screen and (max-width: 450px) {
+            .notification-container {
+            font-size: 200%;
+        }
             
+            .dial1 {
+            width: 30px;
+            height: 30px;
+
+            left: 79%;
+            top: 9%;
         }
 
-        .notification {
-            margin: 0;
-        }
+        .dial2 {
+            width: 30px;
+            height: 30px;
 
-        .input-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .text-input {
-            height: 100%;
-            width: 25em;
-            margin-right: 1vw;
-        }
-
-        .submit-button {
-            border-radius: 10px;
-        }
-
-        .pf-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;    
-        }
-
-        .pf {
-            text-transform:uppercase;
-            font-family: sans-serif;
-            font-weight: bold;
-        }
-
-        .pf a {
-            color: #c8be6f;
-            text-decoration: none;
+            left: 79%;
+            top: 21%;
         }
 
         .btn1 {
-            width: 45px;
-            height: 45px;
-            
-            position:absolute;
-            left: 80%;
-            top: 10%;
-        
-            border-radius: 22.5px;
-            z-index: 9;
-            /* background-color: aqua; */
+            width: 12px;
+            height: 12px;
+
+            left: 77%;
+            top: 33%;
         }
 
         .btn2 {
-            width: 45px;
-            height: 45px;
-            
-            position:absolute;
-            left: 80%;
-            top: 24%;
-        
-            border-radius: 22.5px;
-            z-index: 9;
-            /* background-color:brown */
+            width: 12px;
+            height: 12px;
+
+            left: 81%;
+            top: 33%;
         }
 
+        .btn3 {
+            width: 12px;
+            height: 12px;
+
+            left: 85%;
+            top: 33%;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 4%;
+            left: 14%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+        }
+        }
+
+        @media screen and (max-width: 415px) {
+            .notification-container {
+            font-size: 150%;
+        }
+            
+            .dial1 {
+            width: 30px;
+            height: 30px;
+
+            left: 79%;
+            top: 9%;
+        }
+
+        .dial2 {
+            width: 30px;
+            height: 30px;
+
+            left: 79%;
+            top: 21%;
+        }
+
+        .btn1 {
+            width: 12px;
+            height: 12px;
+
+            left: 77%;
+            top: 33%;
+        }
+
+        .btn2 {
+            width: 12px;
+            height: 12px;
+
+            left: 81%;
+            top: 33%;
+        }
+
+        .btn3 {
+            width: 12px;
+            height: 12px;
+
+            left: 85%;
+            top: 33%;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 3%;
+            left: 14%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -2;
+        }
+        }
 
     </style>
 </head>
@@ -138,10 +310,13 @@
         <div class="frame">
             <img src="tvimagelayers/knob.png" alt="Frame">
             <div class="video-container">
-                <video src="channelvideo/livingroom1.mov" autoplay loop muted></video>
+                <video src="channelvideo/LIVINGROOM1-sm.m4v" autoplay loop muted></video>
             </div>
+            <div class="dial1"></div>
+            <div class="dial2"></div>
             <div class="btn1"></div>
             <div class="btn2"></div>
+            <div class="btn3"></div>
         </div>
        
         <div class="notification-container">
@@ -156,7 +331,7 @@
         </div>
     </div>
     <script>
-        const btn1 = document.querySelector('.btn1').addEventListener('click', changeChannel);
+        const dial1 = document.querySelector('.dial1').addEventListener('click', changeChannel);
         function randomNumber() {
             let N = 7;
             let randomInteger = Math.floor(Math.random() * N);
@@ -170,11 +345,11 @@
             let oldSrc = video.src;
             console.log("Old Source is: " + oldSrc);
             const srcList = [1,2,3,4,5,6,7];
-            let newSrc = "channelvideo/livingroom" + srcList[randomNumber()] + ".mov";
+            let newSrc = "channelvideo/LIVINGROOM" + srcList[randomNumber()] + "-sm.m4v";
             console.log("New Source is: " + newSrc);
             
             if (oldSrc.includes(newSrc)) {
-                let newSrc = "channelvideo/staticonly.mov";
+                let newSrc = "channelvideo/mov/staticonly.mov";
                 video.setAttribute('src', newSrc);
                 video.load();
             }
@@ -184,9 +359,30 @@
             }
         }
 
-        const btn2 = document.querySelector('.btn2').addEventListener('click', changeLogo);
+        const dial2 = document.querySelector('.dial2').addEventListener('click', changeLogo);
         function changeLogo() {
             alert('logo');   
+        }
+       
+        // dial3 -- on/off
+        
+        let powerState = true;
+        const btn3 = document.querySelector('.btn3').addEventListener('click', onOff);
+        
+        function onOff() {
+            if (powerState == true) {
+                // alert('power is off');
+                powerState = false;
+                let video = document.querySelector('video');
+                video.setAttribute('src', 'none');
+            }
+            else {
+                //alert('power is on');
+                powerState = true;
+                let video = document.querySelector('video');
+                video.setAttribute('src', 'channelvideo/mov/staticonly.mov');
+            }
+
         }
     </script>
 </body>
