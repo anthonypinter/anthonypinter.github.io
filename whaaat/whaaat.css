@@ -15,6 +15,7 @@ body {
     width: 90%;
     max-width: 800px;
     position: relative;
+    max-height: 500px;
 }
 
 .frame {
@@ -44,7 +45,6 @@ body {
     height: auto;
     object-fit: cover;
     border: solid black 20px;
-    
 }
 
 video::-webkit-media-controls-start-playback-button {
@@ -62,7 +62,6 @@ video::-webkit-media-controls-start-playback-button {
     justify-content: center;
     align-items: center;
     margin-bottom: 0;
-    
 }
 
 .notification {
@@ -73,7 +72,6 @@ video::-webkit-media-controls-start-playback-button {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .text-input {
@@ -131,8 +129,7 @@ video::-webkit-media-controls-start-playback-button {
 
     border-radius: 22.5px;
     z-index: 9;
-    background-color:brown;
-    
+    background-color:brown; 
 }
 
 .btn1 {
