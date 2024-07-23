@@ -47,6 +47,11 @@ body {
     
 }
 
+video::-webkit-media-controls-start-playback-button {
+    display: none;
+    opacity: 1;
+}
+
 .notification-container {
     font-family: bookman-jf-pro, serif; 
     font-weight: 400;
