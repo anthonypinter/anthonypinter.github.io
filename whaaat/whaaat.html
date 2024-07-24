@@ -53,6 +53,7 @@
     @media screen and (max-width: 400px) {
         .video-container {
             top: 0;
+            
         }
        
         .notification-container {
@@ -101,7 +102,7 @@
         <div class="frame">
             <img src="tvimagelayers/tv.png" alt="Frame">
             <div class="video-container">
-                <video src="oldchannelvideo/staticonly.mov" autoplay loop muted webkit-playsinline playsinline></video>
+                <video src="channelvideo/LIVINGROOM1-sm.m4v" autoplay loop muted webkit-playsinline playsinline></video>
             </div>
             <div id="btn1" class="btn" data-channel="1"></div>
             <div id="btn2" class="btn" data-channel="2"></div>
@@ -158,7 +159,7 @@
             let oldSrc = video.src;
             // console.log("Old Source is: " + oldSrc);
 
-            let newSrc = "oldchannelvideo/livingroom" + channel + ".mov";
+            let newSrc = "channelvideo/LIVINGROOM" + channel + "-sm.m4v";
             // console.log("New Source is: " + newSrc);           
             
             if (oldSrc.includes(newSrc)) {
