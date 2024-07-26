@@ -148,6 +148,7 @@ video::-webkit-media-controls-start-playback-button {
 @media screen and (max-width: 850px) {
     .video-container {
         top:4%;
+        left: 5.25%;
     }
     
     #btn1 {
@@ -224,6 +225,7 @@ video::-webkit-media-controls-start-playback-button {
 @media screen and (max-width: 725px) {
     .video-container {
         top:3%;
+        left: 4.75%;
     }
     
     .btn {
@@ -274,5 +276,54 @@ video::-webkit-media-controls-start-playback-button {
 @media screen and (max-width: 600px) {
 .video-container {
     top: 2%;
+    left: 3.75%
 }
+}
+
+@media screen and (max-width: 550px) {
+    .notification-container {
+        font-size: 200%;
+    }
+    
+    .btn {
+        width: 18px;
+        height: 16px;
+    }
+
+    #btn1 {
+        top: 7%;
+    }
+
+    #btn2 {
+        top: 10.5%;
+    }
+
+    #btn3 {
+        top: 14.5%;
+    }
+
+    #btn4 {
+        top: 18%;
+    }
+
+    #btn5 {
+        top: 22%;
+    }
+
+    #btn6 {
+        top: 26%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .video-container {
+        top: 1%;
+        left: 2.75%;
+    }
+
+    .btn {
+        width: 16px;
+        height: 13px;
+    }
+
 }
