@@ -117,32 +117,32 @@ video::-webkit-media-controls-start-playback-button {
 
 #btn1 {
     top: 9%;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 #btn2 {
     top: 14%;
-    background-color:brown;
+    /* background-color:brown; */
 }
 
 #btn3 {
     top: 19%;
-    background-color:chartreuse;
+    /* background-color:chartreuse; */
 }
 
 #btn4 {
     top: 23%;
-    background-color:hotpink;
+    /* background-color:hotpink; */
 }
 
 #btn5 {
     top: 28%;
-    background-color:darkgoldenrod
+    /* background-color:darkgoldenrod */
 }
 
 #btn6 {
     top: 33%;
-    background-color:darkslategrey;
+    /* background-color:darkslategrey; */
 }
 
 @media screen and (max-width: 850px) {
@@ -327,3 +327,110 @@ video::-webkit-media-controls-start-playback-button {
     }
 
 }
+
+  @media screen and (max-width: 415px) {
+        .video-container {
+            top: 0;
+            left: 2.5%;
+            
+        }
+       
+        .notification-container {
+            font-size: 150%;
+        }
+
+        .pf {
+            font-size: 80%;
+        }
+
+        .btn {
+            left: 84%;
+            width: 15px;
+            height: 11px;
+        }
+
+        #btn1 {
+            top: 6%;
+            
+        }
+
+        #btn2 {
+            top: 10.5%;
+        }
+
+        #btn3 {
+            top: 14.5%;
+        }
+
+        #btn4 {
+            top: 18%;
+        }
+
+        #btn5 {
+            top: 22%;
+        }
+
+        #btn6 {
+            top: 26%;
+        }
+
+        
+    }
+
+    @media screen and (max-width: 350px) {
+        .text-input {
+            height: 100%;
+            width: 15em;
+            margin-right: 1vw;
+        }
+
+        .pf {
+            font-size: 80%;
+        }
+    }
+
+    @media screen and (max-width: 315px) {
+        .video-container {
+            top: -2%;
+            left: 0%;
+        }
+        
+        .notification-container {
+            font-size: 100%;
+        }
+
+        .text-input {
+            height: 100%;
+            width: 15em;
+            margin-right: 1vw;
+        }
+
+        .submit-button {
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        .pf-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+              
+        }
+
+        .pf {
+            text-transform:uppercase;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 10%;
+        }
+    }
+
+    @media screen and (max-width: 250px) {
+        .video-container { 
+            top:-3%;
+            left: -2%;
+        }
+        
+    }
