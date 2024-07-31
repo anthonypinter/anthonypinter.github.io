@@ -22,9 +22,9 @@ const cvBtn = document.getElementById('navi-cv');
 cvBtn.addEventListener('click', switchPage, false);
 cvBtn.myParam = 'cv';
 
-const contactBtn = document.getElementById('navi-contact');
-contactBtn.addEventListener('click', switchPage, false);
-contactBtn.myParam = 'contact';
+// const contactBtn = document.getElementById('navi-contact');
+// contactBtn.addEventListener('click', switchPage, false);
+// contactBtn.myParam = 'contact';
 
 const newsArchiveBtn = document.getElementById('news-more');
 newsArchiveBtn.addEventListener('click', switchPage, false);
@@ -35,7 +35,7 @@ const aboutDiv = document.getElementById('about');
 const pubDiv = document.getElementById('publications');
 const projectsDiv = document.getElementById('projects');
 const cvDiv = document.getElementById('cv');
-const contactDiv = document.getElementById('contact');
+// const contactDiv = document.getElementById('contact');
 const newsArchiveDiv = document.getElementById('newsarchive')
 
 function switchPage (page) {
@@ -47,7 +47,7 @@ function switchPage (page) {
         pubDiv.style.display = 'none';
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
-        contactDiv.style.display = 'none';
+        // contactDiv.style.display = 'none';
         newsArchiveDiv.style.display = 'none';
         // this rough logic works -- 
         // need to add a smooth transition
@@ -61,7 +61,7 @@ function switchPage (page) {
         pubDiv.style.display = 'none';
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
-        contactDiv.style.display = 'none';
+        // contactDiv.style.display = 'none';
         newsArchiveDiv.style.display = 'none';
     }
    
@@ -72,7 +72,7 @@ function switchPage (page) {
         pubDiv.style.display = 'block';
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
-        contactDiv.style.display = 'none';
+        // contactDiv.style.display = 'none';
         newsArchiveDiv.style.display = 'none';
     }
 
@@ -83,7 +83,7 @@ function switchPage (page) {
         pubDiv.style.display = 'none';
         projectsDiv.style.display = 'block';
         cvDiv.style.display = 'none';
-        contactDiv.style.display = 'none';
+        // contactDiv.style.display = 'none';
         newsArchiveDiv.style.display = 'none';
     }
 
@@ -94,11 +94,11 @@ function switchPage (page) {
         pubDiv.style.display = 'none';
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'block';
-        contactDiv.style.display = 'none';
+        // contactDiv.style.display = 'none';
         newsArchiveDiv.style.display = 'none';
     }
 
-    if (page.currentTarget.myParam == 'contact') {
+    /* if (page.currentTarget.myParam == 'contact') {
         console.log('contact');
         aboutDiv.style.display = 'none';
         homeDiv.style.display = 'none';
@@ -107,7 +107,7 @@ function switchPage (page) {
         cvDiv.style.display = 'none';
         contactDiv.style.display = 'block';
         newsArchiveDiv.style.display = 'none';
-    }
+    } */
     if (page.currentTarget.myParam == 'archive') {
         console.log('contact');
         aboutDiv.style.display = 'none';
@@ -115,7 +115,7 @@ function switchPage (page) {
         pubDiv.style.display = 'none';
         projectsDiv.style.display = 'none';
         cvDiv.style.display = 'none';
-        contactDiv.style.display = 'none';
+        // contactDiv.style.display = 'none';
         newsArchiveDiv.style.display = 'block';
     }
 }
