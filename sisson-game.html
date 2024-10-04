@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipping Tiles with Custom Data</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(4, 100px);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tile {
+            perspective: 1000px;
+        }
+        .tile-inner {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .tile.flipped .tile-inner {
+            transform: rotateY(180deg);
+        }
+        .tile-front, .tile-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+        }
+        .tile-front {
+            background-color: #4CAF50;
+        }
+        .tile-back {
+            background-color: #FF5722;
+            transform: rotateY(180deg);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Generate 20 tiles -->
+        <div class="tile" data-index="0"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">A</div></div></div>
+        <div class="tile" data-index="1"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">B</div></div></div>
+        <div class="tile" data-index="2"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">C</div></div></div>
+        <div class="tile" data-index="3"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">D</div></div></div>
+        <div class="tile" data-index="4"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">E</div></div></div>
+        <div class="tile" data-index="5"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">F</div></div></div>
+        <div class="tile" data-index="6"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">G</div></div></div>
+        <div class="tile" data-index="7"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">H</div></div></div>
+        <div class="tile" data-index="8"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">I</div></div></div>
+        <div class="tile" data-index="9"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">J</div></div></div>
+        <div class="tile" data-index="10"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">K</div></div></div>
+        <div class="tile" data-index="11"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">L</div></div></div>
+        <div class="tile" data-index="12"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">M</div></div></div>
+        <div class="tile" data-index="13"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">N</div></div></div>
+        <div class="tile" data-index="14"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">O</div></div></div>
+        <div class="tile" data-index="15"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">P</div></div></div>
+        <div class="tile" data-index="16"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">Q</div></div></div>
+        <div class="tile" data-index="17"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">R</div></div></div>
+        <div class="tile" data-index="18"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">S</div></div></div>
+        <div class="tile" data-index="19"><div class="tile-inner"><div class="tile-front"></div><div class="tile-back">T</div></div></div>
+    </div>
+    <button id="randomize">Randomize Data</button>
+
+    <script>
+   let canSelect = true;
+let lastSelectedIndex = null;
+let sequence = [];
+
+function randomizeTiles() {
+    const values = [0, 0, 0, 0, 0, 11, 11, 11, 11, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    values.sort(() => Math.random() - 0.5); // Shuffle the array
+
+    document.querySelectorAll('.tile').forEach((tile, index) => {
+        const randomValue = values[index];
+        tile.setAttribute('data-value', randomValue);
+        tile.querySelector('.tile-back').textContent = randomValue;
+        tile.querySelector('.tile-front').textContent = ''; // Clear the front text
+        tile.classList.remove('flipped'); // Flip the tile back to its original state
+    });
+
+    lastSelectedIndex = null; // Reset the last selected index
+    sequence = []; // Reset the sequence
+}
+
+function flipAllTilesBack() {
+    document.querySelectorAll('.tile').forEach(tile => {
+        tile.classList.remove('flipped');
+    });
+}
+
+function isCardinalDirection(currentIndex, newIndex) {
+    const gridSize = 5; // Number of columns
+    const rowCurrent = Math.floor(currentIndex / gridSize);
+    const colCurrent = currentIndex % gridSize;
+    const rowNew = Math.floor(newIndex / gridSize);
+    const colNew = newIndex % gridSize;
+
+    return (
+        (rowCurrent === rowNew && Math.abs(colCurrent - colNew) === 1) || // Left or right
+        (colCurrent === colNew && Math.abs(rowCurrent - rowNew) === 1)    // Up or down
+    );
+}
+
+function isEdgeTile(index) {
+    const gridSize = 5; // Number of columns
+    const row = Math.floor(index / gridSize);
+    const col = index % gridSize;
+
+    return (
+        row === 0 || row === 3 || // Top or bottom row
+        col === 0 || col === 4    // Left or right column
+    );
+}
+
+function resetGame() {
+    flipAllTilesBack();
+    lastSelectedIndex = null;
+    sequence = [];
+    canSelect = true; // Ensure canSelect is reset
+}
+
+document.querySelectorAll('.tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+        if (!canSelect) return;
+
+        const currentIndex = parseInt(tile.getAttribute('data-index'));
+        const currentValue = parseInt(tile.getAttribute('data-value'));
+
+        if (lastSelectedIndex === null && !isEdgeTile(currentIndex)) {
+            return; // Only allow selection from the edge tiles for the first tile
+        }
+
+        if (lastSelectedIndex !== null && !isCardinalDirection(lastSelectedIndex, currentIndex)) {
+            return; // Only allow selection if the tile is in a cardinal direction from the last selected tile
+        }
+
+        tile.classList.toggle('flipped');
+        canSelect = false;
+        lastSelectedIndex = currentIndex;
+
+        if (currentValue === 0) {
+            setTimeout(resetGame, 2000); // Pause for 2 seconds before resetting the game
+        } else if (currentValue >= 1 && currentValue <= 5) {
+            sequence.push(currentValue);
+            if (sequence.length > 5 || sequence[sequence.length - 1] !== sequence.length) {
+                setTimeout(resetGame, 2000); // Reset if the sequence is out of order
+            } else if (sequence.length === 5) {
+                alert("Congratulations! You've selected tiles 1, 2, 3, 4, and 5 in order!");
+            }
+        }
+
+        setTimeout(() => {
+            canSelect = true;
+        }, 1000); // Disable selection for 1 second
+    });
+});
+
+document.getElementById('randomize').addEventListener('click', randomizeTiles);
+
+// Randomize tiles when the page loads
+window.onload = randomizeTiles;
+
+    </script>
+</body>
+</html>
