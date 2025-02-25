@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSCW 2026 - Sketchy Design with Sans-Serif</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary: #0092CE;
+  --primary-light: #8fcde9;
+  --secondary: #F3B44D;
+  --secondary-light: #f9d292;
+  --dark: #333333;
+  --light: #ffffff;
+  --bg: #f8f8f8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Background grid for sketch effect */
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+  background-image: linear-gradient(var(--primary-light) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--primary-light) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Sketchy Border Elements */
+.sketch-container {
+  position: relative;
+}
+
+.sketch-box {
+  position: relative;
+  background-color: var(--light);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* SVG Pattern for sketchy borders */
+.sketch-box::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='%230092CE' stroke-width='2' stroke-dasharray='6, 14' stroke-dashoffset='0' stroke-linecap='square'/%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+/* Sketchy Lines */
+.sketch-line {
+  height: 3px;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='3' viewBox='0 0 100 3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5C15 0,35 3,50 1.5C65 0,85 3,100 1.5' stroke='%230092CE' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 100px 3px;
+  margin: 1rem 0;
+}
+
+/* Navigation Bar */
+.header {
+  padding: 1.5rem 0;
+  position: relative;
+  background-color: var(--light);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary);
+  clip-path: polygon(0 0, 4% 5%, 10% 0, 15% 5%, 20% 0, 25% 5%, 30% 0, 35% 5%, 40% 0, 45% 5%, 50% 0, 55% 5%, 60% 0, 65% 5%, 70% 0, 75% 5%, 80% 0, 85% 5%, 90% 0, 95% 5%, 100% 0, 100% 100%, 0 100%);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+  clip-path: polygon(0 0, 10% 100%, 20% 0, 30% 100%, 40% 0, 50% 100%, 60% 0, 70% 100%, 80% 0, 90% 100%, 100% 0);
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--light);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  z-index: 100;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--light);
+  transform: rotate(45deg);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 1rem;
+}
+
+.dropdown-item {
+  margin: 0.5rem 0;
+}
+
+.dropdown-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  display: block;
+}
+
+.dropdown-link:hover {
+  color: var(--primary);
+}
+
+/* Main Content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.title-container {
+  background-color: var(--light);
+  padding: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title-container::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='%230092CE' stroke-width='2' stroke-dasharray='6, 14' stroke-dashoffset='0' stroke-linecap='square'/%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+.conference-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.highlight {
+  position: relative;
+  display: inline;
+  z-index: 1;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--secondary-light);
+  z-index: -1;
+  clip-path: polygon(0 0, 3% 50%, 5% 0, 8% 50%, 11% 0, 14% 50%, 17% 0, 20% 50%, 23% 0, 26% 50%, 29% 0, 32% 50%, 35% 0, 38% 50%, 41% 0, 44% 50%, 47% 0, 50% 50%, 53% 0, 56% 50%, 59% 0, 62% 50%, 65% 0, 68% 50%, 71% 0, 74% 50%, 77% 0, 80% 50%, 83% 0, 86% 50%, 89% 0, 92% 50%, 95% 0, 98% 50%, 100% 0, 100% 100%, 0 100%);
+}
+
+.description-box {
+  background-color: var(--primary-light);
+  padding: 2rem;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--dark);
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.description-box::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='%23ffffff' stroke-width='2' stroke-dasharray='6, 14' stroke-dashoffset='0' stroke-linecap='square'/%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+/* News Section */
+.news-section {
+  margin-top: 5rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 0.5rem auto 0;
+  background-color: var(--secondary);
+  clip-path: polygon(0 0, 10% 100%, 20% 0, 30% 100%, 40% 0, 50% 100%, 60% 0, 70% 100%, 80% 0, 90% 100%, 100% 0);
+}
+
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.news-item {
+  background-color: var(--light);
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 3px solid var(--primary);
+}
+
+.news-item::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='%230092CE' stroke-width='1' stroke-dasharray='6, 14' stroke-dashoffset='0' stroke-linecap='square'/%3E%3C/svg%3E");
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.news-item:hover::before {
+  opacity: 1;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 300;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--light);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  margin-top: 5rem;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='3' viewBox='0 0 100 3' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5C15 0,35 3,50 1.5C65 0,85 3,100 1.5' stroke='%230092CE' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 100px 3px;
+}
+
+.copyright {
+  color: var(--dark);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .conference-title {
+    font-size: 1.8rem;
+  }
+  
+  .title-container {
+    padding: 2rem 1rem;
+  }
+  
+  .description-box {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">CSCW2026</a>
+      
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">SUBMIT</a>
+            <div class="dropdown">
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">PAPERS</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">CHANGES AND CLARIFICATIONS</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">CODE OF CONDUCT</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">ABOUT CSCW</a>
+            <div class="dropdown">
+              <ul class="dropdown-list">
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">ORGANIZING COMMITTEE</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#" class="dropdown-link">STEERING COMMITTEE</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section class="hero-section">
+      <div class="title-container">
+        <h1 class="conference-title">
+          THE 29TH ACM CONFERENCE ON <span class="highlight">COMPUTER-SUPPORTED COOPERATIVE WORK</span> AND SOCIAL COMPUTING
+        </h1>
+        
+        <div class="description-box">
+          CSCW is the premier venue for research in the design and use of technologies that affect groups, organizations, communities, and networks. Bringing together top researchers and practitioners, CSCW explores the technical, social, material, and theoretical challenges of designing technology to support collaborative work and life activities.
+        </div>
+      </div>
+    </section>
+    
+    <div class="sketch-line"></div>
+    
+    <section class="news-section">
+      <h2 class="section-title">News</h2>
+      
+      <div class="news-container">
+        <div class="news-item">
+          <h3 class="news-title">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit</h3>
+          <p class="news-date">February 20, 2025</p>
+        </div>
+        
+        <div class="news-item">
+          <h3 class="news-title">Nullam Eget Felis Eget Nunc Lobortis Mattis Aliquam</h3>
+          <p class="news-date">February 12, 2025</p>
+        </div>
+        
+        <div class="news-item">
+          <h3 class="news-title">Sed Euismod Nisi Porta Lorem Mollis Aliquam</h3>
+          <p class="news-date">January 30, 2025</p>
+        </div>
+        
+        <div class="news-item">
+          <h3 class="news-title">Donec Ultrices Tincidunt Arcu Non Sodales Neque</h3>
+          <p class="news-date">January 15, 2025</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <p class="copyright">Copyright © 2025 CSCW 2025</p>
+  </footer>
+</body>
+</html>

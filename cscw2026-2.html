@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSCW 2026 - Modern Design</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Modern sidebar navigation */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  background-color: #0092CE;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #F3B44D;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.nav-item {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  display: block;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #F3B44D;
+}
+
+.nav-link.has-submenu::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+}
+
+.submenu {
+  list-style: none;
+  margin-left: 1rem;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.nav-item:hover .submenu {
+  height: auto;
+}
+
+.submenu-item {
+  margin: 0.5rem 0;
+}
+
+.submenu-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.submenu-link:hover {
+  color: #F3B44D;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 280px;
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+.hero-section {
+  position: relative;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #0092CE;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #F3B44D;
+  opacity: 0.2;
+  border-radius: 50%;
+  transform: translate(30%, 30%);
+}
+
+.conference-title {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  color: #0092CE;
+  margin-bottom: 2rem;
+  position: relative;
+  max-width: 800px;
+}
+
+.conference-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background-color: #F3B44D;
+}
+
+.description-container {
+  max-width: 800px;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  color: #0092CE;
+  font-size: 1.8rem;
+  margin: 3rem 0 1.5rem;
+  position: relative;
+  display: inline-block;
+  max-width: 800px;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: #F3B44D;
+}
+
+.news-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.news-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+  border: 2px solid #0092CE;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-card-header {
+  padding: 1.5rem;
+  background-color: white;
+  color: #0092CE;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  background-color: #0092CE;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #0092CE;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-left: 280px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+  .main-content,
+  .footer {
+    margin-left: 0;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .conference-title {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+<body>
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  
+  <nav class="sidebar" id="sidebar">
+    <div class="logo-container">
+      <div class="logo-circle"></div>
+      <div class="logo-text">CSCW2026</div>
+    </div>
+    
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#" class="nav-link">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link has-submenu">SUBMIT</a>
+        <ul class="submenu">
+          <li class="submenu-item">
+            <a href="#" class="submenu-link">PAPERS</a>
+          </li>
+          <li class="submenu-item">
+            <a href="#" class="submenu-link">CHANGES AND CLARIFICATIONS</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">CODE OF CONDUCT</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link has-submenu">ABOUT CSCW</a>
+        <ul class="submenu">
+          <li class="submenu-item">
+            <a href="#" class="submenu-link">ORGANIZING COMMITTEE</a>
+          </li>
+          <li class="submenu-item">
+            <a href="#" class="submenu-link">STEERING COMMITTEE</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  <main class="main-content">
+    <section class="hero-section">
+      <h1 class="conference-title">
+        THE 29TH ACM CONFERENCE ON COMPUTER-SUPPORTED COOPERATIVE WORK AND SOCIAL COMPUTING
+      </h1>
+      
+      <div class="description-container">
+        CSCW is the premier venue for research in the design and use of technologies that affect groups, organizations, communities, and networks. Bringing together top researchers and practitioners, CSCW explores the technical, social, material, and theoretical challenges of designing technology to support collaborative work and life activities.
+      </div>
+    </section>
+    
+    <h2 class="section-title">News</h2>
+    
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-card-header">
+          <h3 class="news-title">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit</h3>
+          <p class="news-date">February 20, 2025</p>
+        </div>
+      </div>
+      
+      <div class="news-card">
+        <div class="news-card-header">
+          <h3 class="news-title">Nullam Eget Felis Eget Nunc Lobortis Mattis Aliquam</h3>
+          <p class="news-date">February 12, 2025</p>
+        </div>
+      </div>
+      
+      <div class="news-card">
+        <div class="news-card-header">
+          <h3 class="news-title">Sed Euismod Nisi Porta Lorem Mollis Aliquam</h3>
+          <p class="news-date">January 30, 2025</p>
+        </div>
+      </div>
+      
+      <div class="news-card">
+        <div class="news-card-header">
+          <h3 class="news-title">Donec Ultrices Tincidunt Arcu Non Sodales Neque</h3>
+          <p class="news-date">January 15, 2025</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    Copyright © 2025 CSCW 2025
+  </footer>
+  
+  <script>
+    // Toggle menu for mobile view
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.toggle('active');
+    });
+    
+    // Handle submenu interactions
+    document.querySelectorAll('.has-submenu').forEach(item => {
+      item.addEventListener('click', function(e) {
+        if (window.innerWidth < 992) {
+          e.preventDefault();
+          this.nextElementSibling.style.height = 
+            this.nextElementSibling.style.height === 'auto' ? '0' : 'auto';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

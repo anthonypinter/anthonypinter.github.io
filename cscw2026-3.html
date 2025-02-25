@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSCW 2026 - Creative Design</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0092CE;
+  --secondary: #F3B44D;
+  --dark: #121212;
+  --light: #f7f7f7;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Animated Background */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(125deg, #121212 0%, #1a1a1a 100%);
+  z-index: -2;
+}
+
+.shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.shape-1 {
+  background-color: var(--primary);
+  width: 40vw;
+  height: 40vw;
+  top: -20vw;
+  right: -10vw;
+  animation: float-1 25s ease-in-out infinite alternate;
+}
+
+.shape-2 {
+  background-color: var(--secondary);
+  width: 35vw;
+  height: 35vw;
+  bottom: -15vw;
+  left: -10vw;
+  animation: float-2 20s ease-in-out infinite alternate;
+}
+
+@keyframes float-1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-10vw, 5vw); }
+}
+
+@keyframes float-2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(5vw, -10vw); }
+}
+
+/* Header & Navigation */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.logo-dot {
+  width: 15px;
+  height: 15px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  margin-left: 5px;
+  align-self: flex-start;
+}
+
+.nav-toggle {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  background: none;
+  border: none;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--light);
+  position: absolute;
+  left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle span:nth-child(1) { top: 10px; }
+.nav-toggle span:nth-child(2) { top: 20px; }
+.nav-toggle span:nth-child(3) { top: 30px; }
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -9px);
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-item {
+  list-style: none;
+  position: relative;
+}
+
+.nav-link {
+  font-size: 2.5rem;
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  min-width: 200px;
+  padding: 1rem;
+  border-radius: 5px;
+  display: none;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown-list {
+  list-style: none;
+}
+
+.dropdown-item {
+  margin: 0.5rem 0;
+}
+
+.dropdown-link {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.dropdown-link:hover {
+  color: var(--secondary);
+}
+
+/* Main Content */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.conference-title {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  position: relative;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: var(--light);
+  position: relative;
+  z-index: 1;
+  transform: skewY(-2deg);
+}
+
+.conference-title span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline;
+}
+
+.title-highlight {
+  position: absolute;
+  height: 100%;
+  width: 1rem;
+  background-color: var(--secondary);
+  left: -2rem;
+  top: 0;
+}
+
+.description-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border-left: 5px solid var(--primary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 5rem;
+  transform: translateZ(0);
+}
+
+.section-title {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  color: var(--light);
+  border-bottom: 5px solid var(--secondary);
+  padding-bottom: 0.5rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.news-item {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.news-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.news-item:hover::before {
+  opacity: 0.1;
+}
+
+.news-content {
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.news-heading {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--light);
+}
+
+.news-date {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-family: 'Space Mono', monospace;
+}
+
+/* Footer */
+.site-footer {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .conference-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .news-heading {
+    font-size: 1.2rem;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="background-animation">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
+
+  <header class="site-header">
+    <a href="#" class="logo">
+      CSCW2026<span class="logo-dot"></span>
+    </a>
+    
+    <button class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="nav-overlay" id="navOverlay">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#" class="nav-link">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">SUBMIT</a>
+          <div class="dropdown">
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">PAPERS</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">CHANGES AND CLARIFICATIONS</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">CODE OF CONDUCT</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">ABOUT CSCW</a>
+          <div class="dropdown">
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">ORGANIZING COMMITTEE</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">STEERING COMMITTEE</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h1 class="conference-title">
+          <div class="title-highlight"></div>
+          THE 29TH ACM <span>CONFERENCE</span> ON COMPUTER-SUPPORTED <span>COOPERATIVE WORK</span> AND SOCIAL COMPUTING
+        </h1>
+        
+        <div class="description-box">
+          CSCW is the premier venue for research in the design and use of technologies that affect groups, organizations, communities, and networks. Bringing together top researchers and practitioners, CSCW explores the technical, social, material, and theoretical challenges of designing technology to support collaborative work and life activities.
+        </div>
+      </section>
+      
+      <section>
+        <h2 class="section-title">News</h2>
+        
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-content">
+              <h3 class="news-heading">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit</h3>
+              <p class="news-date">February 20, 2025</p>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h3 class="news-heading">Nullam Eget Felis Eget Nunc Lobortis Mattis Aliquam</h3>
+              <p class="news-date">February 12, 2025</p>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h3 class="news-heading">Sed Euismod Nisi Porta Lorem Mollis Aliquam</h3>
+              <p class="news-date">January 30, 2025</p>
+            </div>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-content">
+              <h3 class="news-heading">Donec Ultrices Tincidunt Arcu Non Sodales Neque</h3>
+              <p class="news-date">January 15, 2025</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <footer class="site-footer">
+    Copyright © 2025 CSCW 2025
+  </footer>
+  
+  <script>
+    document.getElementById('navToggle').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('navOverlay').classList.toggle('active');
+    });
+    
+    // Animate the shapes slightly on mouse move for parallax effect
+    document.addEventListener('mousemove', function(e) {
+      const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+      const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+      
+      document.querySelector('.shape-1').style.transform = `translate(${moveX}px, ${moveY}px)`;
+      document.querySelector('.shape-2').style.transform = `translate(${-moveX}px, ${-moveY}px)`;
+    });
+  </script>
+</body>
+</html>

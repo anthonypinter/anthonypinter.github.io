@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSCW 2026 - Avant-Garde Design</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+
+:root {
+  --primary: #0092CE;
+  --secondary: #F3B44D;
+  --dark: #000000;
+  --light: #ffffff;
+  --grid-size: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  perspective: 1000px;
+  overflow-x: hidden;
+}
+
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: var(--grid-size) var(--grid-size);
+  background-image:
+    linear-gradient(to right, rgba(0, 146, 206, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 146, 206, 0.1) 1px, transparent 1px);
+  z-index: -1;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg);
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 var(--grid-size);
+  }
+}
+
+.cyberpunk-header {
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-glitch {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--light);
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.logo-glitch::before,
+.logo-glitch::after {
+  content: 'CSCW2026';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.logo-glitch::before {
+  color: var(--primary);
+  animation: glitch-effect 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -2px);
+}
+
+.logo-glitch::after {
+  color: var(--secondary);
+  animation: glitch-effect 3s infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(2px, 2px);
+}
+
+@keyframes glitch-effect {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.nav-cyber {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--light);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  min-width: 200px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  border-left: 2px solid var(--secondary);
+  z-index: 101;
+}
+
+.nav-item:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-link {
+  color: var(--light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  font-family: 'Rajdhani', sans-serif;
+  display: block;
+}
+
+.dropdown-link:hover {
+  color: var(--secondary);
+}
+
+.main-content {
+  padding-top: 5rem;
+  transform-style: preserve-3d;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.futuristic-title-box {
+  margin: 4rem 0;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.title-frame {
+  position: relative;
+  border: 2px solid var(--primary);
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 30px rgba(0, 146, 206, 0.5);
+  transform-style: preserve-3d;
+  animation: hover-effect 8s ease-in-out infinite;
+}
+
+@keyframes hover-effect {
+  0%, 100% {
+    transform: translateZ(0) rotateX(0);
+  }
+  50% {
+    transform: translateZ(20px) rotateX(2deg);
+  }
+}
+
+.title-frame::before,
+.title-frame::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--secondary);
+}
+
+.title-frame::before {
+  top: -15px;
+  left: -15px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.title-frame::after {
+  bottom: -15px;
+  right: -15px;
+  border-left: none;
+  border-top: none;
+}
+
+.conference-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.3;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.conference-title span {
+  display: inline-block;
+  position: relative;
+}
+
+.conference-title span:nth-child(odd) {
+  color: var(--primary);
+  animation: float-text 5s ease-in-out infinite;
+}
+
+.conference-title span:nth-child(even) {
+  color: var(--secondary);
+  animation: float-text 5s ease-in-out infinite reverse;
+}
+
+@keyframes float-text {
+  0%, 100% {
+    transform: translateZ(0);
+  }
+  50% {
+    transform: translateZ(30px);
+  }
+}
+
+.cyber-description {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  border-left: 3px solid var(--primary);
+  padding: 2rem;
+  margin: 5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  transform: skewX(-5deg);
+}
+
+.cyber-description::after {
+  content: 'CSCW';
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: var(--secondary);
+  opacity: 0.3;
+}
+
+.news-section {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.news-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.news-card {
+  position: relative;
+  border: 1px solid var(--primary);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.news-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--secondary);
+}
+
+.news-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 146, 206, 0.3);
+}
+
+.news-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 5px;
+  background-color: var(--secondary);
+}
+
+.news-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.news-date {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.cyber-footer {
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid var(--primary);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+  animation: gradient-shift 10s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .nav-cyber {
+    display: none;
+  }
+  
+  .conference-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Word splitting for animation */
+.word-split {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 10px rgba(0, 146, 206, 0.5),
+    0 0 15px rgba(0, 146, 206, 0.3),
+    0 0 20px rgba(0, 146, 206, 0.2);
+}
+</style>
+</head>
+<body>
+  <div class="grid-background"></div>
+  
+  <header class="cyberpunk-header">
+    <a href="#" class="logo-glitch">CSCW2026</a>
+    
+    <nav>
+      <ul class="nav-cyber">
+        <li class="nav-item">
+          <a href="#" class="nav-link">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">SUBMIT</a>
+          <div class="dropdown">
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">PAPERS</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">CHANGES AND CLARIFICATIONS</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">CODE OF CONDUCT</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">ABOUT CSCW</a>
+          <div class="dropdown">
+            <ul class="dropdown-list">
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">ORGANIZING COMMITTEE</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#" class="dropdown-link">STEERING COMMITTEE</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="main-content">
+    <div class="container">
+      <div class="futuristic-title-box">
+        <div class="title-frame">
+          <h1 class="conference-title">
+            <span class="word-split">THE</span> <span class="word-split">29TH</span> <span class="word-split">ACM</span> <span class="word-split">CONFERENCE</span> <span class="word-split">ON</span> <span class="word-split">COMPUTER-SUPPORTED</span> <span class="word-split">COOPERATIVE</span> <span class="word-split">WORK</span> <span class="word-split">AND</span> <span class="word-split neon-glow">SOCIAL</span> <span class="word-split">COMPUTING</span>
+          </h1>
+        </div>
+      </div>
+      
+      <div class="cyber-description">
+        CSCW is the premier venue for research in the design and use of technologies that affect groups, organizations, communities, and networks. Bringing together top researchers and practitioners, CSCW explores the technical, social, material, and theoretical challenges of designing technology to support collaborative work and life activities.
+      </div>
+      
+      <div class="news-section">
+        <h2 class="section-heading">News_</h2>
+        
+        <div class="news-container">
+          <div class="news-card">
+            <h3 class="news-title">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit</h3>
+            <p class="news-date">02.20.2025</p>
+          </div>
+          
+          <div class="news-card">
+            <h3 class="news-title">Nullam Eget Felis Eget Nunc Lobortis Mattis Aliquam</h3>
+            <p class="news-date">02.12.2025</p>
+          </div>
+          
+          <div class="news-card">
+            <h3 class="news-title">Sed Euismod Nisi Porta Lorem Mollis Aliquam</h3>
+            <p class="news-date">01.30.2025</p>
+          </div>
+          
+          <div class="news-card">
+            <h3 class="news-title">Donec Ultrices Tincidunt Arcu Non Sodales Neque</h3>
+            <p class="news-date">01.15.2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="cyber-footer">
+    Copyright © 2025 CSCW 2025
+  </footer>
+  
+  <script>
+    // Split title into words for individual animation
+    document.addEventListener('DOMContentLoaded', function() {
+      const title = document.querySelector('.conference-title');
+      const words = title.textContent.trim().split(' ');
+      title.innerHTML = '';
+      
+      words.forEach((word, index) => {
+        const span = document.createElement('span');
+        span.classList.add('word-split');
+        if (index % 5 === 0) {
+          span.classList.add('neon-glow');
+        }
+        span.textContent = word + ' ';
+        title.appendChild(span);
+      });
+      
+      // Add parallax effect to grid background
+      document.addEventListener('mousemove', function(e) {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+        
+        document.querySelector('.grid-background').style.transform = 
+          `rotateX(80deg) translateX(${moveX}px) translateY(${moveY}px)`;
+      });
+    });
+  </script>
+</body>
+</html>

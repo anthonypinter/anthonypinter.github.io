@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navigation Bar with Dropdowns</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html, body {
+height: 100%;
+}
+body {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+.navbar {
+background-color: #0092CE;
+padding: 0.5rem 2rem;
+font-family: Arial, sans-serif;
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: relative;
+z-index: 1000;
+}
+.logo {
+color: white;
+font-size: 1.5rem;
+font-weight: bold;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+.logo-circle {
+width: 32px;
+height: 32px;
+background-color: #F3B44D;
+border-radius: 50%;
+}
+.nav-list {
+list-style: none;
+display: flex;
+gap: 2rem;
+}
+.nav-item {
+position: relative;
+}
+.nav-link {
+color: white;
+text-decoration: none;
+padding: 1.5rem 1rem;
+display: block;
+transition: color 0.3s;
+}
+.nav-link:hover {
+color: #F3B44D;
+}
+.dropdown {
+position: absolute;
+top: 100%;
+left: 0;
+background-color: white;
+min-width: 200px;
+opacity: 0;
+visibility: hidden;
+transform: translateY(-10px);
+transition: all 0.3s ease;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+border-radius: 0 0 4px 4px;
+z-index: 1000;
+}
+.nav-item:hover .dropdown {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+.dropdown-list {
+list-style: none;
+}
+.dropdown-item {
+padding: 0.8rem 1rem;
+color: #333;
+cursor: pointer;
+transition: all 0.3s;
+}
+.dropdown-item:hover {
+background-color: #F3B44D;
+color: white;
+}
+.main-content {
+padding: 3rem 2rem;
+flex-grow: 1;
+text-align: center;
+}
+.page-title {
+  font-size: 2.6rem;
+  line-height: 1.3;
+  font-weight: 800;
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  color: #0092CE;
+  border-bottom: 4px solid #F3B44D;
+  border-top: 4px solid #F3B44D;
+  padding: 1.5rem 0;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.page-title::before,
+.page-title::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #F3B44D;
+  border-radius: 50%;
+}
+
+.page-title::before {
+  top: -12px;
+  left: -12px;
+}
+
+.page-title::after {
+  bottom: -12px;
+  right: -12px;
+}
+
+.page-title strong {
+  display: block;
+  transform: scale(1, 0.95);
+}
+.description-box {
+background-color: #f2f2f2;
+padding: 2rem;
+border-radius: 5px;
+max-width: 1000px;
+margin: 0 auto;
+text-align: left;
+color: #333;
+line-height: 1.6;
+}
+.section-title {
+font-size: 2rem;
+margin: 3rem auto 1.5rem;
+color: #0092CE;
+text-align: left;
+max-width: 1000px;
+}
+.news-container {
+max-width: 1000px;
+margin: 0 auto;
+text-align: left;
+}
+.news-item {
+margin-bottom: 1.5rem;
+border-bottom: 1px solid #e0e0e0;
+padding-bottom: 1rem;
+}
+.news-item:last-child {
+border-bottom: none;
+}
+.news-title {
+color: #0092CE;
+margin-bottom: 0.5rem;
+font-size: 1.3rem;
+}
+.news-date {
+color: #666;
+margin-bottom: 0.5rem;
+font-size: 0.9rem;
+}
+.site-footer {
+background-color: #0092CE;
+color: white;
+text-align: center;
+padding: 1rem 0;
+margin-top: auto;
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<a href="#" class="logo">
+<div class="logo-circle"></div>
+<span>CSCW2026</span>
+</a>
+<ul class="nav-list">
+<li class="nav-item">
+<a href="#" class="nav-link">HOME</a>
+</li>
+<li class="nav-item">
+<a href="#" class="nav-link">SUBMIT</a>
+<div class="dropdown">
+<ul class="dropdown-list">
+<li class="dropdown-item">PAPERS</li>
+<li class="dropdown-item">CHANGES AND CLARIFICATIONS</li>
+</ul>
+</div>
+</li>
+<li class="nav-item">
+<a href="#" class="nav-link">CODE OF CONDUCT</a>
+</li>
+<li class="nav-item">
+<a href="#" class="nav-link">ABOUT CSCW</a>
+<div class="dropdown">
+<ul class="dropdown-list">
+<li class="dropdown-item">ORGANIZING COMMITTEE</li>
+<li class="dropdown-item">STEERING COMMITTEE</li>
+</ul>
+</div>
+</li>
+</ul>
+</nav>
+
+<main class="main-content">
+    <h1 class="page-title">
+        <strong>THE 29TH ACM CONFERENCE ON COMPUTER-SUPPORTED COOPERATIVE WORK AND SOCIAL COMPUTING</strong>
+    </h1>
+    
+    <div class="description-box">
+        CSCW is the premier venue for research in the design and use of technologies that affect groups, organizations, communities, and networks. Bringing together top researchers and practitioners, CSCW explores the technical, social, material, and theoretical challenges of designing technology to support collaborative work and life activities.
+    </div>
+    
+    <h2 class="section-title">
+        News
+    </h2>
+    
+    <div class="news-container">
+        <div class="news-item">
+            <h3 class="news-title">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit</h3>
+            <p class="news-date">February 20, 2025</p>
+        </div>
+        
+        <div class="news-item">
+            <h3 class="news-title">Nullam Eget Felis Eget Nunc Lobortis Mattis Aliquam</h3>
+            <p class="news-date">February 12, 2025</p>
+        </div>
+        
+        <div class="news-item">
+            <h3 class="news-title">Sed Euismod Nisi Porta Lorem Mollis Aliquam</h3>
+            <p class="news-date">January 30, 2025</p>
+        </div>
+        
+        <div class="news-item">
+            <h3 class="news-title">Donec Ultrices Tincidunt Arcu Non Sodales Neque</h3>
+            <p class="news-date">January 15, 2025</p>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    Copyright © 2025 CSCW 2025
+</footer>
+
+<script>
+// Add click event listeners to dropdown items
+document.querySelectorAll('.dropdown-item').forEach(item => {
+item.addEventListener('click', () => {
+console.log('Selected:', item.textContent);
+// Add your custom click handling logic here
+});
+});
+</script>
+</body>
+</html>
