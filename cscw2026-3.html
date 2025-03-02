@@ -16,8 +16,8 @@
 :root {
   --primary: #0092CE;
   --secondary: #F3B44D;
-  --dark: #121212;
-  --light: #f7f7f7;
+  --dark: #ffffff; /* Changed from #121212 to white */
+  --light: #121212; /* Changed from #f7f7f7 to dark */
 }
 
 body {
@@ -28,6 +28,13 @@ body {
   min-height: 100vh;
 }
 
+/* Moving Gradient Animation */
+@keyframes moveGradient {
+  0% { background-position: 0% center; }
+  100% { background-position: -300% center; }
+}
+
+
 /* Animated Background */
 .background-animation {
   position: fixed;
@@ -35,44 +42,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(125deg, #121212 0%, #1a1a1a 100%);
+  background: linear-gradient(125deg, #ffffff 0%, #f5f5f5 100%); /* Changed to light colors */
   z-index: -2;
-}
-
-.shape {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0.6;
-  z-index: -1;
-}
-
-.shape-1 {
-  background-color: var(--primary);
-  width: 40vw;
-  height: 40vw;
-  top: -20vw;
-  right: -10vw;
-  animation: float-1 25s ease-in-out infinite alternate;
-}
-
-.shape-2 {
-  background-color: var(--secondary);
-  width: 35vw;
-  height: 35vw;
-  bottom: -15vw;
-  left: -10vw;
-  animation: float-2 20s ease-in-out infinite alternate;
-}
-
-@keyframes float-1 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-10vw, 5vw); }
-}
-
-@keyframes float-2 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(5vw, -10vw); }
 }
 
 /* Header & Navigation */
@@ -80,18 +51,48 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
   font-weight: 900;
   font-size: 2rem;
-  color: var(--light);
   text-decoration: none;
   display: flex;
-  align-items: center;
-  z-index: 2;
+  align-items: flex-start;
+}
+
+.logo-text {
+  font-weight: 900;
+  background-image: linear-gradient(to right, 
+    var(--primary) 0%, 
+    var(--primary) 20%, 
+    #E29A3B 40%, 
+    #E29A3B 60%, 
+    var(--primary) 80%, 
+    var(--primary) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: moveGradient 12s linear infinite;
+  animation-delay: 0;
+}
+
+.logo-year {
+  font-weight: 900;
+  color: var(--light);
+}
+
+.logo-dots {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  gap: 3px;
 }
 
 .logo-dot {
@@ -99,74 +100,22 @@ body {
   height: 15px;
   background-color: var(--secondary);
   border-radius: 50%;
-  margin-left: 5px;
-  align-self: flex-start;
 }
 
-.nav-toggle {
-  width: 40px;
-  height: 40px;
-  position: relative;
-  z-index: 3;
-  cursor: pointer;
-  background: none;
-  border: none;
-  overflow: hidden;
+.logo-dot-blue {
+  width: 15px;
+  height: 15px;
+  background-color: var(--primary);
   border-radius: 50%;
-}
-
-.nav-toggle span {
-  display: block;
-  width: 30px;
-  height: 2px;
-  background-color: var(--light);
-  position: absolute;
-  left: 5px;
-  transition: transform 0.3s ease;
-}
-
-.nav-toggle span:nth-child(1) { top: 10px; }
-.nav-toggle span:nth-child(2) { top: 20px; }
-.nav-toggle span:nth-child(3) { top: 30px; }
-
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -9px);
-}
-
-.nav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.nav-overlay.active {
-  opacity: 1;
-  visibility: visible;
 }
 
 .nav-menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-item {
@@ -175,7 +124,7 @@ body {
 }
 
 .nav-link {
-  font-size: 2.5rem;
+  font-size: 1rem;
   color: var(--light);
   text-decoration: none;
   font-weight: 700;
@@ -183,6 +132,7 @@ body {
   display: inline-block;
   overflow: hidden;
   transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 .nav-link::after {
@@ -210,13 +160,20 @@ body {
 .dropdown {
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  min-width: 200px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  min-width: 250px;
   padding: 1rem;
   border-radius: 5px;
   display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* For the last navigation item, align dropdown to the right */
+.nav-item:last-child .dropdown {
+  left: auto;
+  right: 0;
 }
 
 .nav-item:hover .dropdown {
@@ -234,8 +191,10 @@ body {
 .dropdown-link {
   color: var(--light);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: color 0.3s ease;
+  display: block;
+  padding: 0.3rem 0;
 }
 
 .dropdown-link:hover {
@@ -261,19 +220,28 @@ body {
   line-height: 1.2;
   margin-bottom: 3rem;
   position: relative;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   color: var(--light);
   position: relative;
   z-index: 1;
   transform: skewY(-2deg);
 }
 
-.conference-title span {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+.conference-title .gradient-text {
+  background-image: linear-gradient(to right, 
+  var(--primary) 0%, 
+  var(--primary) 20%, 
+  #E29A3B 40%, 
+  #E29A3B 60%, 
+  var(--primary) 80%, 
+  var(--primary) 100%);
+  background-size: 400% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  display: inline;
+  display: inline-block;
+  animation: moveGradient 12s linear infinite;
+  animation-delay: 0;
 }
 
 .title-highlight {
@@ -286,11 +254,10 @@ body {
 }
 
 .description-box {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
   padding: 2.5rem;
   border-radius: 15px;
-  border-left: 5px solid var(--primary);
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 5rem;
@@ -316,8 +283,7 @@ body {
 }
 
 .news-item {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.03);
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -339,11 +305,16 @@ body {
 
 .news-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .news-item:hover::before {
-  opacity: 0.1;
+  opacity: 0.2;
+}
+
+/* Alternate hover colors */
+.news-item:nth-child(even)::before {
+  background: linear-gradient(45deg, var(--secondary), transparent);
 }
 
 .news-content {
@@ -360,17 +331,17 @@ body {
 }
 
 .news-date {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 0.9rem;
-  font-family: 'Space Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Footer */
 .site-footer {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   padding: 2rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
 }
 
@@ -392,57 +363,53 @@ body {
 </head>
 <body>
   <div class="background-animation">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
   </div>
 
   <header class="site-header">
     <a href="#" class="logo">
-      CSCW2026<span class="logo-dot"></span>
+      <span class="logo-text">CSCW</span><span style="margin-left: 4px;" class="logo-year">2026</span>
+      <!-- 
+      <div class="logo-dots">
+        <span class="logo-dot"></span>
+        <span class="logo-dot-blue"></span>
+      </div>
+      -->
     </a>
     
-    <button class="nav-toggle" id="navToggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    
-    <div class="nav-overlay" id="navOverlay">
-      <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="#" class="nav-link">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">SUBMIT</a>
-          <div class="dropdown">
-            <ul class="dropdown-list">
-              <li class="dropdown-item">
-                <a href="#" class="dropdown-link">PAPERS</a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="dropdown-link">CHANGES AND CLARIFICATIONS</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">CODE OF CONDUCT</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">ABOUT CSCW</a>
-          <div class="dropdown">
-            <ul class="dropdown-list">
-              <li class="dropdown-item">
-                <a href="#" class="dropdown-link">ORGANIZING COMMITTEE</a>
-              </li>
-              <li class="dropdown-item">
-                <a href="#" class="dropdown-link">STEERING COMMITTEE</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#" class="nav-link">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">SUBMIT</a>
+        <div class="dropdown">
+          <ul class="dropdown-list">
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">PAPERS</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">CHANGES AND CLARIFICATIONS</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">CODE OF CONDUCT</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">ABOUT CSCW</a>
+        <div class="dropdown">
+          <ul class="dropdown-list">
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">ORGANIZING COMMITTEE</a>
+            </li>
+            <li class="dropdown-item">
+              <a href="#" class="dropdown-link">STEERING COMMITTEE</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </header>
   
   <main>
@@ -450,7 +417,7 @@ body {
       <section class="hero">
         <h1 class="conference-title">
           <div class="title-highlight"></div>
-          THE 29TH ACM <span>CONFERENCE</span> ON COMPUTER-SUPPORTED <span>COOPERATIVE WORK</span> AND SOCIAL COMPUTING
+          THE 29TH ACM CONFERENCE ON COMPUTER-SUPPORTED <span class="gradient-text">COOPERATIVE WORK</span> AND <span class="gradient-text">SOCIAL COMPUTING</span>
         </h1>
         
         <div class="description-box">
@@ -495,23 +462,7 @@ body {
   </main>
   
   <footer class="site-footer">
-    Copyright © 2025 CSCW 2025
+    Copyright © 2026 CSCW 2026
   </footer>
-  
-  <script>
-    document.getElementById('navToggle').addEventListener('click', function() {
-      this.classList.toggle('active');
-      document.getElementById('navOverlay').classList.toggle('active');
-    });
-    
-    // Animate the shapes slightly on mouse move for parallax effect
-    document.addEventListener('mousemove', function(e) {
-      const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-      const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-      
-      document.querySelector('.shape-1').style.transform = `translate(${moveX}px, ${moveY}px)`;
-      document.querySelector('.shape-2').style.transform = `translate(${-moveX}px, ${-moveY}px)`;
-    });
-  </script>
 </body>
 </html>
