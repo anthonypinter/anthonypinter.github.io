@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .course-selector {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .course-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .course-btn {
+            padding: 10px 20px;
+            border: 2px solid #4CAF50;
+            background-color: white;
+            color: #4CAF50;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .course-btn.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .course-btn:hover {
+            background-color: #45a049;
+            color: white;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        input[type="number"] {
+            width: 80px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .weight-column {
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .total-row {
+            background-color: #e8f5e8 !important;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .final-grade {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Grade Calculator</h1>
+        
+        <div class="course-selector">
+            <h3>Select Course:</h3>
+            <div class="course-buttons">
+                <button class="course-btn active" onclick="switchCourse(1)">Pedagogy I</button>
+                <button class="course-btn" onclick="switchCourse(2)">Pedagogy II</button>
+            </div>
+        </div>
+        
+        <table id="gradeTable">
+            <thead>
+                <tr>
+                    <th>Assignment Category</th>
+                    <th>Weight</th>
+                    <th>Your Score (%)</th>
+                    <th>Weighted Points</th>
+                </tr>
+            </thead>
+            <tbody id="gradeTableBody">
+                <!-- Table rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <div class="final-grade">
+            <div>Your Current Grade: <span id="finalGrade">0.00%</span></div>
+        </div>
+    </div>
+
+    <script>
+        // Course configurations
+        const courses = {
+            1: {
+                name: "Pedagogy I",
+                categories: [
+                    { name: "Attendance", weight: 0.10, id: "attendance" },
+                    { name: "Class Prep", weight: 0.15, id: "classPrep" },
+                    { name: "Professionalism", weight: 0.10, id: "professionalism" },
+                    { name: "In-Class Activities", weight: 0.15, id: "inClass" },
+                    { name: "VTC Project", weight: 0.20, id: "vtcProject" },
+                    { name: "Final Survey", weight: 0.20, id: "finalSurvey" }
+                ]
+            },
+            2: {
+                name: "Pedagogy II",
+                categories: [
+                    { name: "Attendance", weight: 0.10, id: "attendance" },
+                    { name: "Class Prep", weight: 0.30, id: "classPrep" },
+                    { name: "Lead a Class", weight: 0.20, id: "leadClass" },
+                    { name: "VTC Project", weight: 0.20, id: "vtcProject" },
+                    { name: "Final Survey", weight: 0.20, id: "finalSurvey" }
+                ]
+            }
+        };
+
+        let currentCourse = 1;
+        let savedGrades = {
+            1: {},
+            2: {}
+        };
+
+        function switchCourse(courseNumber) {
+            // Save current grades before switching
+            saveCurrentGrades();
+            
+            // Update current course
+            currentCourse = courseNumber;
+            
+            // Update button states
+            document.querySelectorAll('.course-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.course-btn:nth-child(${courseNumber})`).classList.add('active');
+            
+            // Rebuild table for new course
+            buildTable();
+            
+            // Load saved grades for this course
+            loadSavedGrades();
+            
+            // Recalculate grade
+            calculateGrade();
+        }
+
+        function saveCurrentGrades() {
+            const tableBody = document.getElementById('gradeTableBody');
+            const inputs = tableBody.querySelectorAll('input[type="number"]');
+            
+            inputs.forEach(input => {
+                if (input.value !== '') {
+                    savedGrades[currentCourse][input.id] = parseFloat(input.value);
+                }
+            });
+        }
+
+        function loadSavedGrades() {
+            const savedData = savedGrades[currentCourse];
+            
+            for (let inputId in savedData) {
+                const input = document.getElementById(inputId);
+                if (input) {
+                    input.value = savedData[inputId];
+                }
+            }
+        }
+
+        function buildTable() {
+            const tableBody = document.getElementById('gradeTableBody');
+            const course = courses[currentCourse];
+            
+            // Clear existing content
+            tableBody.innerHTML = '';
+            
+            // Add category rows
+            course.categories.forEach(category => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${category.name}</td>
+                    <td class="weight-column">${(category.weight * 100)}%</td>
+                    <td><input type="number" id="${category.id}" min="0" max="100" placeholder="0-100" oninput="calculateGrade()"></td>
+                    <td id="${category.id}-weighted">0.00</td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            // Add total row
+            const totalRow = document.createElement('tr');
+            totalRow.className = 'total-row';
+            totalRow.innerHTML = `
+                <td colspan="2"><strong>TOTAL</strong></td>
+                <td id="totalPercentage">0.00%</td>
+                <td id="totalWeighted">0.00</td>
+            `;
+            tableBody.appendChild(totalRow);
+        }
+
+        function calculateGrade() {
+            const course = courses[currentCourse];
+            let totalWeightedPoints = 0;
+            let totalPossibleWeights = 0;
+
+            // Calculate weighted points for each category
+            course.categories.forEach(category => {
+                const input = document.getElementById(category.id);
+                const score = parseFloat(input.value) || 0;
+                const weight = category.weight;
+                const weightedPoints = (score * weight);
+                
+                // Update the weighted points display
+                document.getElementById(category.id + '-weighted').textContent = weightedPoints.toFixed(2);
+                
+                // Add to totals only if there's a score entered
+                if (input.value !== '') {
+                    totalWeightedPoints += weightedPoints;
+                    totalPossibleWeights += weight * 100;
+                }
+            });
+
+            // Calculate overall grade
+            const overallGrade = totalWeightedPoints;
+            
+            // Update displays
+            document.getElementById('totalWeighted').textContent = totalWeightedPoints.toFixed(2);
+            document.getElementById('finalGrade').textContent = overallGrade.toFixed(2) + '%';
+            
+            // Update the grade display color based on performance
+            const gradeDisplay = document.querySelector('.final-grade');
+            if (overallGrade >= 90) {
+                gradeDisplay.style.backgroundColor = '#4CAF50'; // Green
+            } else if (overallGrade >= 80) {
+                gradeDisplay.style.backgroundColor = '#2196F3'; // Blue
+            } else if (overallGrade >= 70) {
+                gradeDisplay.style.backgroundColor = '#FF9800'; // Orange
+            } else if (overallGrade >= 60) {
+                gradeDisplay.style.backgroundColor = '#F44336'; // Red
+            } else {
+                gradeDisplay.style.backgroundColor = '#795548'; // Brown
+            }
+        }
+
+        // Initialize the calculator
+        buildTable();
+        calculateGrade();
+    </script>
+</body>
+</html>
